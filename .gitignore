@@ -1,0 +1,53 @@
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# 构建产物
+**/bin/
+**/obj/
+**/target/
+**/dist/
+**/build/
+
+# Go
+**/*.test
+**/*.out
+
+# Node / TypeScript
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Solidity / Hardhat / Foundry
+cache/
+artifacts/
+out/
+broadcast/
+.openzeppelin/
+
+# Rust
+**/*.rs.bk
+
+# 环境与密钥
+.env
+.env.local
+*.pem
+*.key
+
+# 大文件 / 数据
+*.csv
+*.parquet
+*.db
+*.sqlite
