@@ -10,7 +10,7 @@
 - [Python](python/README.md)
 
 ### Go · 当前笔记
-- [01 · Go 后端学习路线图](golang/notes/01-go-backend-roadmap.md)
+- [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
 - [02 · 第一梯队：企业级框架](golang/notes/02-go-tier1-enterprise-frameworks.md)
 - [03 · 第二梯队：云原生基础设施](golang/notes/03-go-tier2-cloudnative-infra.md)
 - [04 · 第三梯队：存储与消息队列](golang/notes/04-go-tier3-storage-and-mq.md)
@@ -20,8 +20,20 @@
 ## 按主题浏览
 
 ### Go 后端学习路线
-- [路线图 · 4 阶段学习路径](golang/notes/01-go-backend-roadmap.md)
+- [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
 - [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
+
+### 路线图阶段对应
+| 阶段 | 主题 | 重点项目 | 笔记 |
+| --- | --- | --- | --- |
+| 0 | Go 基础速通 | — | [01](./golang/notes/01-go-backend-roadmap.md) |
+| 1 | 工程规范 | go-clean-arch | [01](./golang/notes/01-go-backend-roadmap.md) · [06](./golang/notes/06-go-tier5-business-systems.md) |
+| 2 | 企业后台 | Gitea | [01](./golang/notes/01-go-backend-roadmap.md) · [06](./golang/notes/06-go-tier5-business-systems.md) |
+| 3 | 微服务 | go-zero | [01](./golang/notes/01-go-backend-roadmap.md) · [02](./golang/notes/02-go-tier1-enterprise-frameworks.md) |
+| 4 | 高并发 + IO | MinIO + Prometheus | [01](./golang/notes/01-go-backend-roadmap.md) · [03](./golang/notes/03-go-tier2-cloudnative-infra.md) · [04](./golang/notes/04-go-tier3-storage-and-mq.md) |
+| 5 | 分布式 | etcd + K8s | [01](./golang/notes/01-go-backend-roadmap.md) · [03](./golang/notes/03-go-tier2-cloudnative-infra.md) |
+| 6 | Web3 | go-ethereum + Chainlink | [01](./golang/notes/01-go-backend-roadmap.md) · [05](./golang/notes/05-go-tier4-web3-blockchain.md) |
+| 7 | 大项目 + 云原生 | Docker + Harbor + Operator | [01](./golang/notes/01-go-backend-roadmap.md) · [03](./golang/notes/03-go-tier2-cloudnative-infra.md) |
 
 ## 按标签浏览
 
@@ -35,6 +47,11 @@
 - `#架构模板` — Clean Architecture / RealWorld
 
 ## 最近更新
+
+- **2026-07-17** · Go 学习路线升级到融合版（8 阶段）
+  - 路线图：`golang/notes/01-go-backend-roadmap.md`
+  - 关键变化：增加阶段 0 补基础、强制"自己实现一遍"、Web3 权重 35%、阶段 4–5–7 去重
+  - 五梯队项目清单保持稳定：`02` / `03` / `04` / `05` / `06`
 
 - **2026-07-17** · 初始化 Go 学习路线系列（6 篇）
   - 路线图：`golang/notes/01-go-backend-roadmap.md`
