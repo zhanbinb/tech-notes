@@ -88,6 +88,10 @@
 
 ## 最近更新
 
+- **2026-07-20** · 增补 Tools 笔记：cachebuster 不会自动 reload + 完整更新 SOP
+  - 笔记：`tools/notes/02-codex-personal-plugin-install-flow.md`（新增"坑 5"和"完整更新 SOP"两节）
+  - 关键价值：把"改源 → cachebuster → 同步 cache → 重启 Codex"沉淀成标准 4 步流程
+
 - **2026-07-20** · 新增 Tools 笔记：Codex 个人插件完整开发与安装流程
   - 笔记：`tools/notes/02-codex-personal-plugin-install-flow.md`
   - 关键价值：把"cache 残留 → 重建 source → marketplace 注册 → 显式 install → 清理残留"沉淀成可复用 SOP

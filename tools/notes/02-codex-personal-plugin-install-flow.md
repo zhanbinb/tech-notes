@@ -151,6 +151,66 @@ codex plugin marketplace add ~/.agents/plugins/marketplace.json
 
 每次都得 `sandbox_permissions=require_escalated`。
 
+
+
+### 坑 5：cachebuster 不会自动 reload
+
+`update_plugin_cachebuster.py` 只 bump **source 端** plugin.json 的 version，但 **Codex UI 不会在当前会话内自动重读 cache**。
+
+```bash
+# 改 source
+code ~/plugins/<name>/skills/<name>/SKILL.md
+
+# bump source version
+python3 ~/.codex/skills/.system/plugin-creator/scripts/update_plugin_cachebuster.py ~/plugins/<name>
+
+# ❌ 这时 Codex UI 还显示旧内容（用的是会话开始时加载的 cache）
+```
+
+正确流程（必须 3 步）：
+
+```bash
+# 1. 改 source + cachebuster（同上）
+
+# 2. 手动把 source 同步到 cache 的新 version 目录
+NEW_VER=$(python3 -c "import json; print(json.load(open('$HOME/plugins/<name>/.codex-plugin/plugin.json'))['version'])")
+cp -R ~/plugins/<name>/. ~/.codex/plugins/cache/<marketplace>/<name>/"$NEW_VER"/
+rm -rf ~/.codex/plugins/cache/<marketplace>/<name>/<旧 version>
+
+# 3. 重启 Codex（或者关掉插件面板再重开也行，但行为不确定）
+```
+
+不重启的话，UI 会一直显示旧内容。这跟"改完代码不用重启服务"的直觉完全不一样。
+
+> 实际案例：2026-07-20 改完 `publish.sh` 加了 `git pull --rebase --autostash`，cachebuster 跑了、version 也 bump 了，但插件面板还显示旧的 `git add → commit → push`，最后才意识到必须重启 Codex。
+
+## 完整更新 SOP（增量迭代场景）
+
+适用于已经装好的本地插件，做小改动的完整流程：
+
+```bash
+# === 1. 改源文件 ===
+code ~/plugins/<name>/skills/<name>/SKILL.md
+# （或改 scripts/*.sh）
+
+# === 2. cachebuster（让 source version 变更新）===
+python3 ~/.codex/skills/.system/plugin-creator/scripts/update_plugin_cachebuster.py ~/plugins/<name>
+
+# === 3. 手动同步 cache（关键！）===
+SRC=~/plugins/<name>
+CACHE_BASE=~/.codex/plugins/cache/<marketplace>/<name>
+NEW_VER=$(python3 -c "import json; print(json.load(open('$SRC/.codex-plugin/plugin.json'))['version'])")
+rm -rf "$CACHE_BASE"/*  # 清掉所有旧 version
+cp -R "$SRC"/. "$CACHE_BASE/$NEW_VER"/
+
+# === 4. 重启 Codex（让 UI 加载新 cache）===
+# 完全退出再开；macOS 上 Cmd+Q → 重新打开
+```
+
+> 沙盒提示：第 2、3 步都需要 `sandbox_permissions=require_escalated`，因为 `~/plugins/...` 和 `~/.codex/plugins/cache/...` 都在沙盒外。
+
+## 验证清单
+
 ## 验证清单
 
 完成后跑一遍：
