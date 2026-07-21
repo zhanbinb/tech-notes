@@ -20,8 +20,9 @@
 - [04 · 第三梯队：存储与消息队列](golang/notes/04-go-tier3-storage-and-mq.md)
 - [05 · 第四梯队：Web3 区块链](golang/notes/05-go-tier4-web3-blockchain.md)
 - [06 · 第五梯队：业务系统模板](golang/notes/06-go-tier5-business-systems.md)
-- [07 · 轻量 Web 框架 · Echo vs Gin](golang/notes/07-go-web-frameworks-echo-vs-gin.md)
-- [08 · main.go 拆解 · Clean Architecture 入口视角](golang/notes/08-go-main-function-clean-arch-entry.md)
+- [go-clean-arch · Clean Architecture 项目拆解](golang/notes/go-clean-arch/)
+  - [01 · Echo vs Gin](golang/notes/go-clean-arch/01-echo-vs-gin.md)
+  - [02 · main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md)
 
 ### Docker · 当前笔记
 - [01 · Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
@@ -36,7 +37,7 @@
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
 - [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
-- [main.go 拆解 · Clean Architecture 入口视角](golang/notes/08-go-main-function-clean-arch-entry.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
+- [main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
 
 ### Docker 容器化
 - [Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
@@ -70,8 +71,13 @@
 
 ## 最近更新
 
+- **2026-07-17** · Go 笔记结构重构：go-clean-arch 相关笔记归入子目录
+  - `golang/notes/go-clean-arch/01-echo-vs-gin.md`（原 07）
+  - `golang/notes/go-clean-arch/02-main-go-clean-arch.md`（原 08）
+  - 为后续 go-clean-arch 项目的方法拆解笔记预留位置
+
 - **2026-07-17** · 新增 Go 笔记：main.go 拆解 · Clean Architecture 入口视角
-  - 笔记：`golang/notes/08-go-main-function-clean-arch-entry.md`
+  - 笔记：`golang/notes/go-clean-arch/02-main-go-clean-arch.md`
   - 关键价值：把 go-clean-arch 入口文件拆成 9 阶段装配流水线，串起 init() / 空白导入 / defer / interface 隐式实现 四个 Go 核心点
 
 

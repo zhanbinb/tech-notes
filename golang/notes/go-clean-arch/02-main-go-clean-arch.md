@@ -259,7 +259,7 @@ func init() {
 
 - 仓库：[bxcodec/go-clean-arch](https://github.com/bxcodec/go-clean-arch)
 - 同源笔记：[03 · go-clean-arch 本地跑通实战（含踩坑）](../docker/notes/03-go-clean-arch-local-run.md)
-- 同源笔记：[07 · 轻量 Web 框架 · Echo vs Gin](notes/07-go-web-frameworks-echo-vs-gin.md)
+- 同源笔记：[07 · 轻量 Web 框架 · Echo vs Gin](go-clean-arch/01-echo-vs-gin.md)
 - 官方文档：[Go database/sql](https://pkg.go.dev/database/sql) · [Echo 框架](https://echo.labstack.com/) · [godotenv](https://github.com/joho/godotenv)
 - 理论参考：[Uncle Bob · Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
