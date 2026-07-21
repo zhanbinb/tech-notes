@@ -1,13 +1,14 @@
-# Tools
+# Codex
 
-开发工具与排查笔记收录地（代理工具、浏览器调试、终端命令、系统网络诊断等不写代码但绕不开的工具栈）。
+Codex 相关笔记收录地（插件开发、Skill 机制、CLI 调试、与其他 Codex 工具链相关的实践）。
 
 > 在和 AI 一起学习的过程中逐步沉淀，每条知识点单独一个 Markdown 文件，放在 [`notes/`](notes/) 下。
 
 ## 笔记目录
 
-### 网络与代理
-- [01 · Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](notes/01-chrome-icons-missing-system-proxy-dead.md)
+### Skill 与插件
+- [01 · Codex Skill 创建：通过 Plugin 分发](notes/01-codex-skill-creation-via-plugin.md)
+- [02 · Codex 个人插件：完整开发与安装流程](notes/02-codex-personal-plugin-install-flow.md)
 
 ## 写作约定
 

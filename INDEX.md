@@ -5,6 +5,7 @@
 ## 按语言浏览
 
 - [AI](AI/README.md)
+- [Codex](codex/README.md)
 - [Go (golang)](golang/README.md)
 - [Docker](docker/README.md)
 - [Solidity](solidity/README.md)
@@ -12,7 +13,11 @@
 - [Tools](tools/README.md)
 
 ### AI · 当前笔记
-- [01 · Codex Skill 创建：通过 Plugin 分发](AI/notes/01-codex-skill-creation-via-plugin.md)
+_暂无条目_
+
+### Codex · 当前笔记
+- [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
+- [02 · Codex 个人插件：完整开发与安装流程](codex/notes/02-codex-personal-plugin-install-flow.md)
 
 ### Go · 当前笔记
 - [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -32,12 +37,12 @@
 
 ### Tools · 当前笔记
 - [01 · Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
-- [02 · Codex 个人插件：完整开发与安装流程](tools/notes/02-codex-personal-plugin-install-flow.md)
 
 ## 按主题浏览
 
-### AI Codex 工具链
-- [Skill 创建：通过 Plugin 分发](AI/notes/01-codex-skill-creation-via-plugin.md)
+### Codex 工具链
+- [Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
+- [Codex 个人插件完整开发与安装流程](codex/notes/02-codex-personal-plugin-install-flow.md)
 
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -51,7 +56,6 @@
 
 ### 工具与排查
 - [Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
-- [Codex 个人插件完整开发与安装流程](tools/notes/02-codex-personal-plugin-install-flow.md)
 
 ### 路线图阶段对应
 | 阶段 | 主题 | 重点项目 | 笔记 |
@@ -88,12 +92,17 @@
 
 ## 最近更新
 
+- **2026-07-20** · 重构分类：Codex 相关笔记从 AI/tools 合并到新 `codex/` 分类
+  - `codex/notes/01-codex-skill-creation-via-plugin.md`（原 AI/notes/01）
+  - `codex/notes/02-codex-personal-plugin-install-flow.md`（原 tools/notes/02）
+  - 同主题笔记集中管理；AI/ 暂留空分类、tools/ 只剩 Chrome 排查
+
 - **2026-07-20** · 增补 Tools 笔记：cachebuster 不会自动 reload + 完整更新 SOP
-  - 笔记：`tools/notes/02-codex-personal-plugin-install-flow.md`（新增"坑 5"和"完整更新 SOP"两节）
+  - 笔记：`codex/notes/02-codex-personal-plugin-install-flow.md`（新增"坑 5"和"完整更新 SOP"两节）
   - 关键价值：把"改源 → cachebuster → 同步 cache → 重启 Codex"沉淀成标准 4 步流程
 
 - **2026-07-20** · 新增 Tools 笔记：Codex 个人插件完整开发与安装流程
-  - 笔记：`tools/notes/02-codex-personal-plugin-install-flow.md`
+  - 笔记：`codex/notes/02-codex-personal-plugin-install-flow.md`
   - 关键价值：把"cache 残留 → 重建 source → marketplace 注册 → 显式 install → 清理残留"沉淀成可复用 SOP
 
 - **2026-07-20** · 新增 Tools 分类：Chrome 页面图标缺失排查笔记
@@ -111,7 +120,7 @@
 
 
 - **2026-07-17** · 新增 AI 笔记：Codex Skill 创建（Plugin 分发机制）
-  - 笔记：`AI/notes/01-codex-skill-creation-via-plugin.md`
+  - 笔记：`codex/notes/01-codex-skill-creation-via-plugin.md`
   - 关键价值：澄清 Codex 的 skill 发现机制，避免下次再踩 "把 SKILL.md 放到 ~/.codex/skills/ 却不生效" 的坑
 
 - **2026-07-17** · 新增 Docker 容器化笔记系列（3 篇）
