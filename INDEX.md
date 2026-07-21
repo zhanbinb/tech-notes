@@ -32,6 +32,7 @@
 
 ### Tools · 当前笔记
 - [01 · Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
+- [02 · Codex 个人插件：完整开发与安装流程](tools/notes/02-codex-personal-plugin-install-flow.md)
 
 ## 按主题浏览
 
@@ -50,6 +51,7 @@
 
 ### 工具与排查
 - [Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
+- [Codex 个人插件完整开发与安装流程](tools/notes/02-codex-personal-plugin-install-flow.md)
 
 ### 路线图阶段对应
 | 阶段 | 主题 | 重点项目 | 笔记 |
@@ -72,6 +74,7 @@
 - `#消息队列` — go-nsq / Kafka / RocketMQ
 - `#Web3` — go-ethereum / Chainlink / Cosmos SDK
 - `#业务系统` — Gitea / Grafana / Harbor / gin-vue-admin / ferry / mall-go / KamaChat
+- `#Codex 插件` — cachebuster / marketplace / plugin-creator / 沙盒 escalate
 - `#架构模板` — Clean Architecture / RealWorld
 - `#入口装配` — main.go 流水线、手工 DI、中间件注册
 - `#Docker` — Docker / Docker Compose / Dockerfile / compose.yaml
@@ -84,6 +87,10 @@
 - `#clashx` — ClashX 代理工具相关
 
 ## 最近更新
+
+- **2026-07-20** · 新增 Tools 笔记：Codex 个人插件完整开发与安装流程
+  - 笔记：`tools/notes/02-codex-personal-plugin-install-flow.md`
+  - 关键价值：把"cache 残留 → 重建 source → marketplace 注册 → 显式 install → 清理残留"沉淀成可复用 SOP
 
 - **2026-07-20** · 新增 Tools 分类：Chrome 页面图标缺失排查笔记
   - 笔记：`tools/notes/01-chrome-icons-missing-system-proxy-dead.md`

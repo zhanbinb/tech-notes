@@ -9,6 +9,9 @@
 ### 网络与代理
 - [01 · Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](notes/01-chrome-icons-missing-system-proxy-dead.md)
 
+### Codex 与插件开发
+- [02 · Codex 个人插件：完整开发与安装流程](notes/02-codex-personal-plugin-install-flow.md)
+
 ## 写作约定
 
 - 笔记命名：`NN-<topic>.md`，`NN` 为两位数序号。
