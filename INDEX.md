@@ -29,7 +29,9 @@ _暂无条目_
 - [go-clean-arch · Clean Architecture 项目拆解](golang/notes/go-clean-arch/)
   - [01 · Echo vs Gin](golang/notes/go-clean-arch/01-echo-vs-gin.md)
   - [02 · main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md)
-
+  - [03 · Delivery 层拆解（internal/rest/article.go）](golang/notes/go-clean-arch/03-rest-delivery-layer.md)
+  - [04 · Repository 层拆解（internal/repository/mysql/article.go）](golang/notes/go-clean-arch/04-repository-mysql-layer.md)
+  - [05 · 原生 database/sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md)
 ### Docker · 当前笔记
 - [01 · Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
 - [02 · Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
@@ -46,11 +48,11 @@ _暂无条目_
 
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
-- [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
 - [main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
+- [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md)
+- [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
 
 ### Docker 容器化
-- [Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
 - [Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
 - [go-clean-arch 本地跑通实战](docker/notes/03-go-clean-arch-local-run.md)
 
@@ -89,8 +91,18 @@ _暂无条目_
 - `#tls` — SSL/TLS 握手问题
 - `#system-proxy` — 系统代理配置与故障
 - `#clashx` — ClashX 代理工具相关
+- `#依赖倒置` — interface 在消费方声明、隐式接口断言、mockery 自动 mock
+- `#delivery-layer` — HTTP / gRPC / CLI 等交付层（Echo handler 等）
+- `#repository-layer` — 数据库接入层、keyset 游标分页、RowsAffected 检查
+- `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-21** · 新增 Go 笔记：go-clean-arch · Delivery / Repository 层拆解 + 原生 sql vs sqlx/gorm/sqlc 选型（3 篇）
+  - `golang/notes/go-clean-arch/03-rest-delivery-layer.md` —— internal/rest/article.go 详解：接口在消费方声明 + mockery 副作用构造 + 错误翻译
+  - `golang/notes/go-clean-arch/04-repository-mysql-layer.md` —— internal/repository/mysql/article.go 详解：fetch helper DRY + keyset 游标分页 + RowsAffected 检查
+  - `golang/notes/go-clean-arch/05-native-sql-vs-orm.md` —— 4 种方案对位表 + 决策树 + sqlx 重写范例
+  - 关键价值：把 go-clean-arch 后续 3 层的拆解沉淀下来；同时把"为什么故意不用 ORM"和"何时换 sqlx"沉淀成可复用决策依据
 
 - **2026-07-20** · 重构分类：Codex 相关笔记从 AI/tools 合并到新 `codex/` 分类
   - `codex/notes/01-codex-skill-creation-via-plugin.md`（原 AI/notes/01）
@@ -117,7 +129,6 @@ _暂无条目_
 - **2026-07-17** · 新增 Go 笔记：main.go 拆解 · Clean Architecture 入口视角
   - 笔记：`golang/notes/go-clean-arch/02-main-go-clean-arch.md`
   - 关键价值：把 go-clean-arch 入口文件拆成 9 阶段装配流水线，串起 init() / 空白导入 / defer / interface 隐式实现 四个 Go 核心点
-
 
 - **2026-07-17** · 新增 AI 笔记：Codex Skill 创建（Plugin 分发机制）
   - 笔记：`codex/notes/01-codex-skill-creation-via-plugin.md`

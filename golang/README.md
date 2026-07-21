@@ -18,6 +18,9 @@ Go 语言笔记收录地。
 - [go-clean-arch · Clean Architecture 项目拆解](notes/go-clean-arch/)
   - [01 · Echo vs Gin](notes/go-clean-arch/01-echo-vs-gin.md)
   - [02 · main.go 拆解 · Clean Architecture 入口视角](notes/go-clean-arch/02-main-go-clean-arch.md)
+  - [03 · Delivery 层拆解（internal/rest/article.go）](notes/go-clean-arch/03-rest-delivery-layer.md)
+  - [04 · Repository 层拆解（internal/repository/mysql/article.go）](notes/go-clean-arch/04-repository-mysql-layer.md)
+  - [05 · 原生 database/sql vs sqlx/gorm/sqlc 选型](notes/go-clean-arch/05-native-sql-vs-orm.md)
 
 ## 写作约定
 
