@@ -9,6 +9,7 @@
 - [Docker](docker/README.md)
 - [Solidity](solidity/README.md)
 - [Python](python/README.md)
+- [Tools](tools/README.md)
 
 ### AI · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](AI/notes/01-codex-skill-creation-via-plugin.md)
@@ -29,6 +30,9 @@
 - [02 · Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
 - [03 · go-clean-arch 本地跑通实战（含踩坑）](docker/notes/03-go-clean-arch-local-run.md)
 
+### Tools · 当前笔记
+- [01 · Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
+
 ## 按主题浏览
 
 ### AI Codex 工具链
@@ -43,6 +47,9 @@
 - [Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
 - [Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
 - [go-clean-arch 本地跑通实战](docker/notes/03-go-clean-arch-local-run.md)
+
+### 工具与排查
+- [Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
 
 ### 路线图阶段对应
 | 阶段 | 主题 | 重点项目 | 笔记 |
@@ -68,8 +75,19 @@
 - `#架构模板` — Clean Architecture / RealWorld
 - `#入口装配` — main.go 流水线、手工 DI、中间件注册
 - `#Docker` — Docker / Docker Compose / Dockerfile / compose.yaml
+- `#chrome` — Chrome 浏览器相关问题排查
+- `#macos` — macOS 系统级问题
+- `#troubleshooting` — 故障排查流程
+- `#network` — 网络层问题（DNS / TLS / 代理 / 防火墙）
+- `#tls` — SSL/TLS 握手问题
+- `#system-proxy` — 系统代理配置与故障
+- `#clashx` — ClashX 代理工具相关
 
 ## 最近更新
+
+- **2026-07-20** · 新增 Tools 分类：Chrome 页面图标缺失排查笔记
+  - 笔记：`tools/notes/01-chrome-icons-missing-system-proxy-dead.md`
+  - 关键价值：固化「DevTools ERR_FAILED → curl SSL_ERROR_SYSCALL → scutil/lsof 定位代理进程崩溃」的完整排查流程，避免下次再走弯路
 
 - **2026-07-17** · Go 笔记结构重构：go-clean-arch 相关笔记归入子目录
   - `golang/notes/go-clean-arch/01-echo-vs-gin.md`（原 07）
