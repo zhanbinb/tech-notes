@@ -15,6 +15,8 @@ Go 语言笔记收录地。
 - [04 · 第三梯队：存储与消息队列（MinIO / go-nsq / Kafka）](notes/04-go-tier3-storage-and-mq.md)
 - [05 · 第四梯队：Web3 区块链（go-ethereum / Chainlink / Cosmos SDK）](notes/05-go-tier4-web3-blockchain.md)
 - [06 · 第五梯队：业务系统模板（Gitea / Grafana / Harbor / gin-vue-admin 等）](notes/06-go-tier5-business-systems.md)
+- [07 · 轻量 Web 框架 · Echo vs Gin](notes/07-go-web-frameworks-echo-vs-gin.md)
+- [08 · main.go 拆解 · Clean Architecture 入口视角](notes/08-go-main-function-clean-arch-entry.md)
 
 ## 写作约定
 
