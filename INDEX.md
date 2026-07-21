@@ -10,6 +10,9 @@
 - [Solidity](solidity/README.md)
 - [Python](python/README.md)
 
+### AI · 当前笔记
+- [01 · Codex Skill 创建：通过 Plugin 分发](AI/notes/01-codex-skill-creation-via-plugin.md)
+
 ### Go · 当前笔记
 - [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
 - [02 · 第一梯队：企业级框架](golang/notes/02-go-tier1-enterprise-frameworks.md)
@@ -17,6 +20,7 @@
 - [04 · 第三梯队：存储与消息队列](golang/notes/04-go-tier3-storage-and-mq.md)
 - [05 · 第四梯队：Web3 区块链](golang/notes/05-go-tier4-web3-blockchain.md)
 - [06 · 第五梯队：业务系统模板](golang/notes/06-go-tier5-business-systems.md)
+- [07 · 轻量 Web 框架 · Echo vs Gin](golang/notes/07-go-web-frameworks-echo-vs-gin.md)
 
 ### Docker · 当前笔记
 - [01 · Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
@@ -24,6 +28,9 @@
 - [03 · go-clean-arch 本地跑通实战（含踩坑）](docker/notes/03-go-clean-arch-local-run.md)
 
 ## 按主题浏览
+
+### AI Codex 工具链
+- [Skill 创建：通过 Plugin 分发](AI/notes/01-codex-skill-creation-via-plugin.md)
 
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -59,6 +66,10 @@
 - `#Docker` — Docker / Docker Compose / Dockerfile / compose.yaml
 
 ## 最近更新
+
+- **2026-07-17** · 新增 AI 笔记：Codex Skill 创建（Plugin 分发机制）
+  - 笔记：`AI/notes/01-codex-skill-creation-via-plugin.md`
+  - 关键价值：澄清 Codex 的 skill 发现机制，避免下次再踩 "把 SKILL.md 放到 ~/.codex/skills/ 却不生效" 的坑
 
 - **2026-07-17** · 新增 Docker 容器化笔记系列（3 篇）
   - 基础概念：[01 Docker vs Docker Compose](./docker/notes/01-docker-vs-compose.md) · [02 Dockerfile vs compose.yaml](./docker/notes/02-dockerfile-vs-compose-yaml.md)
