@@ -21,6 +21,8 @@ Go 语言笔记收录地。
   - [03 · Delivery 层拆解（internal/rest/article.go）](notes/go-clean-arch/03-rest-delivery-layer.md)
   - [04 · Repository 层拆解（internal/repository/mysql/article.go）](notes/go-clean-arch/04-repository-mysql-layer.md)
   - [05 · 原生 database/sql vs sqlx/gorm/sqlc 选型](notes/go-clean-arch/05-native-sql-vs-orm.md)
+  - [06 · cmd 双入口、wire 组合根、Swagger 与 Bearer 协议实战](notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md)
+  - [07 · Register 五层调用链与 Go 依赖反转（含接收者与类型别名）](notes/go-clean-arch/07-register-call-chain-and-di.md)
 
 ## 写作约定
 
