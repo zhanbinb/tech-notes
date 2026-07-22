@@ -51,3 +51,9 @@ broadcast/
 *.parquet
 *.db
 *.sqlite
+
+
+# VitePress blog
+docs/node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
