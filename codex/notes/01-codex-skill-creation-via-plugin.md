@@ -79,4 +79,4 @@ codex plugin add save-to-tech-notes@<marketplace-name>
 - tech-notes 仓库：`/Users/yangpeipei/Documents/zbb/project/tech-notes/`
 
 ---
-#Codex #Skill #Plugin #MCP #AI工作流
+#Codex #Skill #Plugin #MCP #工作流

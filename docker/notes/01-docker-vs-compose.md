@@ -1,7 +1,7 @@
 # 01 · Docker vs Docker Compose 区别
 
 > 记录时间：2026-07-17
-> 来源：与 AI 讨论 go-clean-arch 项目运行过程时的问答
+> 来源：go-clean-arch 项目运行过程的问答
 
 ## 一句话区别
 
