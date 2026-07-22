@@ -186,6 +186,63 @@ console.log(`✓ 拷贝到 docs/: ${cpResult.join(", ") || "(无)"}`);
 console.log(`  顶级笔记: ${topCount} 篇`);
 console.log(`  子分组笔记: ${subCount} 篇`);
 
+
+// === 同步生成 docs/index.md（完全覆盖，不依赖模板存在） ===
+const INDEX_MD = path.join(REPO_ROOT, "docs", "index.md");
+fs.mkdirSync(path.dirname(INDEX_MD), { recursive: true });
+const INDEX_TEMPLATE = `# Tech Notes
+
+> 学习过程中沉淀的技术笔记仓库，覆盖 Go 后端 / Web3 / 云原生 / 工具排查 等领域。
+
+## 🎯 当前学习重点
+
+- **Go 后端 → Web3 后端**：长期目标，准备 P6/P7 级简历项目
+- **Clean Architecture 实战**：从 go-clean-arch 项目逐层拆解
+- **Codex 工具链**：把 AI 工具真正用成日常生产力
+
+## 📚 笔记导航
+
+{table}
+
+## ✍️ 写作约定
+
+- 笔记命名：\`NN-<topic>.md\`，两位数序号便于排序
+- 主体中文；关键字、类型名、API 保留英文
+- 一条笔记 = 一个具体知识点，颗粒度适中
+
+---
+
+> 📦 仓库地址：[github.com/zhanbinb/tech-notes](https://github.com/zhanbinb/tech-notes)
+`;
+fs.writeFileSync(INDEX_MD, INDEX_TEMPLATE.replace("{table}", buildNavTable(sidebar)), "utf-8");
+console.log(`✓ 生成 ${path.relative(REPO_ROOT, INDEX_MD)}`);
+
+function buildNavTable(sidebarObj) {
+  const lines = ["| 分类 | 入口 | 笔记数 |", "| --- | --- | --- |"];
+  for (const [pathKey, entries] of Object.entries(sidebarObj)) {
+    if (!entries.length) continue;
+    const entry = entries[0];
+    const totalCount = entry.items.reduce((n, i) => n + (i.items ? i.items.length : 1), 0);
+    const subGroups = entry.items.filter((i) => i.items);
+    const firstItem = entry.items.find((i) => !i.items);
+    const catName = entry.text;
+    const catPath = pathKey.replace(/^\/|\/$/g, "");
+    let label;
+    if (subGroups.length > 0) {
+      const topCount = entry.items.filter((i) => !i.items).length;
+      const subNoteCount = subGroups.reduce((n, g) => n + g.items.length, 0);
+      const subName = subGroups[0].text;
+      label = `${topCount} 篇主线 + ${subNoteCount} 篇 ${subName}`;
+    } else {
+      label = `${totalCount} 篇`;
+    }
+    const linkText = firstItem ? firstItem.text : catPath;
+    const linkHref = firstItem ? firstItem.link : "/" + catPath;
+    lines.push(`| ${catName} | [${linkText}](${linkHref}) | ${label} |`);
+  }
+  return lines.join("\n");
+}
+
 function copyRecursiveSync(src, dst) {
   fs.mkdirSync(dst, { recursive: true });
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {

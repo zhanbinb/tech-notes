@@ -12,10 +12,11 @@
 
 | 分类 | 入口 | 笔记数 |
 | --- | --- | --- |
-| Go 后端 | [学习路线](/golang/01-go-backend-roadmap) | 6 篇主线 + 8 篇 go-clean-arch 拆解 |
-| Codex | [Codex Skill](/codex/01-codex-skill-creation-via-plugin) | 2 篇 |
-| Docker | [Docker vs Compose](/docker/01-docker-vs-compose) | 3 篇 |
-| Tools | [Chrome 图标排查](/tools/01-chrome-icons-missing-system-proxy-dead) | 1 篇 |
+| Codex 工具链 | [Codex Skill 创建：通过 Plugin 分发](/codex/01-codex-skill-creation-via-plugin) | 2 篇 |
+| Docker 容器化 | [01 · Docker vs Docker Compose 区别](/docker/01-docker-vs-compose) | 3 篇 |
+| GitHub | [Tech Notes 博客：自动部署工作流](/github/01-tech-notes-blog-auto-deploy) | 1 篇 |
+| Go 后端学习路线 | [Go 后端学习路线图（融合版 · 2026-07）](/golang/01-go-backend-roadmap) | 6 篇主线 + 8 篇 go-clean-arch 项目拆解 |
+| 工具与排查 | [Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](/tools/01-chrome-icons-missing-system-proxy-dead) | 1 篇 |
 
 ## ✍️ 写作约定
 

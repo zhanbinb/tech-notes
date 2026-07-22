@@ -60,3 +60,4 @@ docs/.vitepress/cache/
 
 # VitePress 自动生成的 sidebar
 docs/.vitepress/sidebar.generated.mjs
+\n# VitePress 自动生成的首页\ndocs/index.md\n
