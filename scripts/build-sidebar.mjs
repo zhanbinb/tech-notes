@@ -26,6 +26,7 @@ const CATEGORY_TITLES = {
   AI: "AI",
   codex: "Codex 工具链",
   docker: "Docker 容器化",
+  github: "GitHub",
   golang: "Go 后端学习路线",
   python: "Python",
   solidity: "Solidity",

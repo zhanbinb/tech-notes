@@ -6,6 +6,7 @@
 
 - [AI](AI/README.md)
 - [Codex](codex/README.md)
+- [GitHub](github/README.md)
 - [Go (golang)](golang/README.md)
 - [Docker](docker/README.md)
 - [Solidity](solidity/README.md)
@@ -18,6 +19,9 @@ _暂无条目_
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
 - [02 · Codex 个人插件：完整开发与安装流程](codex/notes/02-codex-personal-plugin-install-flow.md)
+
+### GitHub · 当前笔记
+- [01 · Tech Notes 博客自动部署工作流](github/notes/01-tech-notes-blog-auto-deploy.md)
 
 ### Go · 当前笔记
 - [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -48,6 +52,9 @@ _暂无条目_
 ### Codex 工具链
 - [Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
 - [Codex 个人插件完整开发与安装流程](codex/notes/02-codex-personal-plugin-install-flow.md)
+
+### GitHub 工具链
+- [Tech Notes 博客自动部署工作流](github/notes/01-tech-notes-blog-auto-deploy.md)
 
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -100,6 +107,11 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-22** · 新增 GitHub 分类 + 博客自动部署工作流笔记
+  - `github/notes/01-tech-notes-blog-auto-deploy.md`：完整记录 tech-notes → VitePress → GitHub Pages 的自动化流程
+  - 自动化效果验证：建 `github/` 分类后只需 push 即可自动 build + 部署
+  - `scripts/build-sidebar.mjs` 加 `github` 分类显示名
 
 - **2026-07-22** · 新增 Go 笔记：go-clean-arch · 三层 Article 字段重合但不是冗余（1 篇）
   - `golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md` —— DTO/Entity/Model 三种"Article"在不同层的责任边界、4 种合并方向代价矩阵、企业级项目对照
