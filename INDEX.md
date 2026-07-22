@@ -34,6 +34,7 @@ _暂无条目_
   - [05 · 原生 database/sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md)
   - [06 · cmd 双入口、wire 组合根、Swagger 与 Bearer 协议实战](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md)
   - [07 · Register 五层调用链与 Go 依赖反转（含接收者与类型别名）](golang/notes/go-clean-arch/07-register-call-chain-and-di.md)
+  - [08 · 三层 Article 为什么"看起来像但不是冗余"](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md)
 ### Docker · 当前笔记
 - [01 · Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
 - [02 · Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
@@ -51,7 +52,7 @@ _暂无条目_
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
 - [main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
-- [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md) · [06 cmd/wire/Bearer](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md) · [07 Register/DI](golang/notes/go-clean-arch/07-register-call-chain-and-di.md)
+- [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md) · [06 cmd/wire/Bearer](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md) · [07 Register/DI](golang/notes/go-clean-arch/07-register-call-chain-and-di.md) · [08 三层 Article 不是冗余](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md)
 - [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
 
 ### Docker 容器化
@@ -99,6 +100,10 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-22** · 新增 Go 笔记：go-clean-arch · 三层 Article 字段重合但不是冗余（1 篇）
+  - `golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md` —— DTO/Entity/Model 三种"Article"在不同层的责任边界、4 种合并方向代价矩阵、企业级项目对照
+  - 关键价值：给"看似重复的三层 Article"一个能复用的决策依据，什么时候分、什么时候合、分了换什么
 
 - **2026-07-22** · 新增 Go 笔记：go-clean-arch · cmd 双入口/wire 组合根 + Register 五层调用链与依赖反转（2 篇）
   - `golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md` —— 双 main 结构 + composition root + Swagger BasePath 双前缀 bug 修复 + JWT Bearer 前缀缺失 401 全流程
