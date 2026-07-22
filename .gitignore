@@ -57,3 +57,6 @@ broadcast/
 docs/node_modules/
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+
+# VitePress 自动生成的 sidebar
+docs/.vitepress/sidebar.generated.mjs

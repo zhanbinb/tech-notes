@@ -38,15 +38,10 @@ jobs:
         working-directory: docs
         run: npm install
 
-      # symlink 在 GitHub Actions 上会让 VitePress 路径解析混乱
-      # build 前把 symlink 覆盖成真实目录（源 notes 文件零改动）
-      - name: Copy notes into docs (override symlinks)
-        run: |
-          rm -rf docs/golang docs/codex docs/docker docs/tools
-          cp -r golang/notes docs/golang
-          cp -r codex/notes docs/codex
-          cp -r docker/notes docs/docker
-          cp -r tools/notes docs/tools
+      # 自动扫描 <category>/notes/ 目录，生成 sidebar 并拷贝到 docs/
+      # 新增分类时只需在仓库里加 <新>/notes/，完全不用改 workflow
+      - name: Prepare notes for build
+        run: node scripts/build-sidebar.mjs
 
       - name: Build site
         working-directory: docs
