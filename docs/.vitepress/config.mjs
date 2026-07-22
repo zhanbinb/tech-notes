@@ -6,6 +6,9 @@ export default defineConfig({
   lang: 'zh-CN',
   lastUpdated: true,
   cleanUrls: true,
+  // 部署在 github.io/<repo>/ 下，必须设 base，否则 CSS/JS 路径全是 404
+  // 想要根路径 URL（zhanbinb.github.io/）则需要把仓库改名为 zhanbinb.github.io
+  base: '/tech-notes/',
   ignoreDeadLinks: true,   // 笔记里的 ./xxx.md 链接保留原样，不让 build 因死链失败
 
   head: [
