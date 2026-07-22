@@ -6,6 +6,7 @@ export default defineConfig({
   lang: 'zh-CN',
   lastUpdated: true,
   cleanUrls: true,
+  ignoreDeadLinks: true,   // 笔记里的 ./xxx.md 链接保留原样，不让 build 因死链失败
 
   head: [
     ['meta', { name: 'theme-color', content: '#3b82f6' }]
