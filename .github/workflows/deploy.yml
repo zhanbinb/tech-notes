@@ -27,8 +27,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: docs/package-lock.json
+          # 暂未提交 package-lock.json，先不启用缓存；后续提交 lockfile 后再打开
+          # cache: npm
+          # cache-dependency-path: docs/package-lock.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
