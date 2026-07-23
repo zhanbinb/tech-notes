@@ -24,6 +24,8 @@ Go 语言笔记收录地。
   - [06 · cmd 双入口、wire 组合根、Swagger 与 Bearer 协议实战](notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md)
   - [07 · Register 五层调用链与 Go 依赖反转（含接收者与类型别名）](notes/go-clean-arch/07-register-call-chain-and-di.md)
   - [08 · 三层 Article 为什么"看起来像但不是冗余"](notes/go-clean-arch/08-three-layer-article-why-not-redundant.md)
+  - [09 · 从 proto 定义到 gRPC 调用的完整链路](notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md)
+  - [10 · RESTful API 与 gRPC 对比与选型](notes/go-clean-arch/10-restful-vs-grpc.md)
 
 ## 写作约定
 

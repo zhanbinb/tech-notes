@@ -39,6 +39,8 @@ _暂无条目_
   - [06 · cmd 双入口、wire 组合根、Swagger 与 Bearer 协议实战](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md)
   - [07 · Register 五层调用链与 Go 依赖反转（含接收者与类型别名）](golang/notes/go-clean-arch/07-register-call-chain-and-di.md)
   - [08 · 三层 Article 为什么"看起来像但不是冗余"](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md)
+  - [09 · 从 proto 定义到 gRPC 调用的完整链路](golang/notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md)
+  - [10 · RESTful API 与 gRPC 对比与选型](golang/notes/go-clean-arch/10-restful-vs-grpc.md)
 ### Docker · 当前笔记
 - [01 · Docker vs Docker Compose 区别](docker/notes/01-docker-vs-compose.md)
 - [02 · Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
@@ -59,7 +61,7 @@ _暂无条目_
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
 - [main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
-- [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md) · [06 cmd/wire/Bearer](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md) · [07 Register/DI](golang/notes/go-clean-arch/07-register-call-chain-and-di.md) · [08 三层 Article 不是冗余](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md)
+- [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md) · [06 cmd/wire/Bearer](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md) · [07 Register/DI](golang/notes/go-clean-arch/07-register-call-chain-and-di.md) · [08 三层 Article 不是冗余](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md) · [09 gRPC proto/代码生成/调用链](golang/notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md) · [10 RESTful vs gRPC](golang/notes/go-clean-arch/10-restful-vs-grpc.md)
 - [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
 
 ### Docker 容器化
@@ -107,6 +109,11 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-23** · 新增 Go 笔记：gRPC 完整实践与 RESTful/gRPC 对比（2 篇）
+  - `golang/notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md` —— 从 `.proto` 契约、Buf 代码生成、Server 实现与注册，到 grpcurl/Go Client 调用和 Clean Architecture 完整链路
+  - `golang/notes/go-clean-arch/10-restful-vs-grpc.md` —— 从抽象模型、传输编码、错误、流式、浏览器、版本治理和应用场景系统对比 RESTful API 与 gRPC
+  - 关键价值：掌握标准 gRPC 落地流程，并能根据公网/内部边界、流式需求、契约治理和性能目标完成协议选型
 
 - **2026-07-22** · 新增 GitHub 分类 + 博客自动部署工作流笔记
   - `github/notes/01-tech-notes-blog-auto-deploy.md`：完整记录 tech-notes → VitePress → GitHub Pages 的自动化流程
