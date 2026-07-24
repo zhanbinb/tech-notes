@@ -30,6 +30,7 @@ _暂无条目_
 - [04 · 第三梯队：存储与消息队列](golang/notes/04-go-tier3-storage-and-mq.md)
 - [05 · 第四梯队：Web3 区块链](golang/notes/05-go-tier4-web3-blockchain.md)
 - [06 · 第五梯队：业务系统模板](golang/notes/06-go-tier5-business-systems.md)
+- [07 · go-zero 企业级实战学习路线图](golang/notes/07-go-zero-enterprise-learning-roadmap.md)
 - [go-clean-arch · Clean Architecture 项目拆解](golang/notes/go-clean-arch/)
   - [01 · Echo vs Gin](golang/notes/go-clean-arch/01-echo-vs-gin.md)
   - [02 · main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md)
@@ -60,6 +61,7 @@ _暂无条目_
 
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
+- [go-zero 企业级实战路线 · 订单交易系统 8～10 周计划](golang/notes/07-go-zero-enterprise-learning-roadmap.md)
 - [main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
 - [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md) · [06 cmd/wire/Bearer](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md) · [07 Register/DI](golang/notes/go-clean-arch/07-register-call-chain-and-di.md) · [08 三层 Article 不是冗余](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md) · [09 gRPC proto/代码生成/调用链](golang/notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md) · [10 RESTful vs gRPC](golang/notes/go-clean-arch/10-restful-vs-grpc.md)
 - [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
@@ -87,6 +89,7 @@ _暂无条目_
 
 - `#学习路线` — 阶段规划、节奏建议
 - `#企业级框架` — go-zero / Kratos / Hertz
+- `#go-zero` — API / zRPC / goctl / 服务治理 / 企业级实战
 - `#云原生` — K8s / Docker / Prometheus / etcd
 - `#存储` — MinIO
 - `#消息队列` — go-nsq / Kafka / RocketMQ
@@ -109,6 +112,10 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-24** · 新增 Go 笔记：go-zero 企业级实战学习路线图
+  - 笔记：`golang/notes/07-go-zero-enterprise-learning-roadmap.md`
+  - 关键价值：以订单交易系统为主线，串联 API、zRPC、MySQL、Redis、etcd、Kafka、幂等、最终一致性、服务治理、可观测性与 Kubernetes 部署，并提供 8～10 周阶段验收标准
 
 - **2026-07-23** · 新增 Go 笔记：gRPC 完整实践与 RESTful/gRPC 对比（2 篇）
   - `golang/notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md` —— 从 `.proto` 契约、Buf 代码生成、Server 实现与注册，到 grpcurl/Go Client 调用和 Clean Architecture 完整链路

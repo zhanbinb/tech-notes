@@ -8,6 +8,7 @@ Go 语言笔记收录地。
 
 ### 学习路线
 - [01 · Go 后端学习路线图（综合规划）](notes/01-go-backend-roadmap.md)
+- [07 · go-zero 企业级实战学习路线图](notes/07-go-zero-enterprise-learning-roadmap.md)
 
 ### 企业级项目分级
 - [02 · 第一梯队：企业级框架（go-zero / Kratos / Hertz）](notes/02-go-tier1-enterprise-frameworks.md)
