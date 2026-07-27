@@ -19,6 +19,7 @@ Go 语言笔记收录地。
 ### 项目拆解
 - [go-zero · 企业级微服务项目拆解](notes/go-zero/)
   - [01 · go-zero 企业级实战学习路线图](notes/go-zero/01-go-zero-enterprise-learning-roadmap.md)
+- [02 · Etcd 服务发现：原理与 go-zero 实战](notes/go-zero/02-etcd-service-discovery.md)
 - [go-clean-arch · Clean Architecture 项目拆解](notes/go-clean-arch/)
   - [01 · Echo vs Gin](notes/go-clean-arch/01-echo-vs-gin.md)
   - [02 · main.go 拆解 · Clean Architecture 入口视角](notes/go-clean-arch/02-main-go-clean-arch.md)

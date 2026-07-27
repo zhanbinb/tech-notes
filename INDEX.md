@@ -32,6 +32,7 @@ _暂无条目_
 - [06 · 第五梯队：业务系统模板](golang/notes/06-go-tier5-business-systems.md)
 - [go-zero · 企业级微服务项目拆解](golang/notes/go-zero/)
   - [01 · go-zero 企业级实战学习路线图](golang/notes/go-zero/01-go-zero-enterprise-learning-roadmap.md)
+  - [02 · Etcd 服务发现：原理与 go-zero 实战](golang/notes/go-zero/02-etcd-service-discovery.md)
 - [go-clean-arch · Clean Architecture 项目拆解](golang/notes/go-clean-arch/)
   - [01 · Echo vs Gin](golang/notes/go-clean-arch/01-echo-vs-gin.md)
   - [02 · main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md)
@@ -63,6 +64,7 @@ _暂无条目_
 ### Go 后端学习路线
 - [路线图 · 8 阶段学习路径（融合版）](golang/notes/01-go-backend-roadmap.md)
 - [go-zero 企业级实战路线 · 订单交易系统 8～10 周计划](golang/notes/go-zero/01-go-zero-enterprise-learning-roadmap.md)
+- [Etcd 服务发现：原理与 go-zero 实战](golang/notes/go-zero/02-etcd-service-discovery.md)
 - [main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
 - [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md) · [06 cmd/wire/Bearer](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md) · [07 Register/DI](golang/notes/go-clean-arch/07-register-call-chain-and-di.md) · [08 三层 Article 不是冗余](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md) · [09 gRPC proto/代码生成/调用链](golang/notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md) · [10 RESTful vs gRPC](golang/notes/go-clean-arch/10-restful-vs-grpc.md)
 - [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
@@ -113,6 +115,10 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-27** · 新增 go-zero 笔记：Etcd 服务发现原理与内置集成实战
+  - 笔记：`golang/notes/go-zero/02-etcd-service-discovery.md`
+  - 关键价值：把 Etcd 的 Lease+Watch+TTL 三大机制讲清，并演示 go-zero 用 yaml 0 行代码完成「注册+发现+负载均衡」的封装套路
 
 - **2026-07-24** · 新增 go-zero 项目拆解目录与企业级实战学习路线图
   - 笔记：`golang/notes/go-zero/01-go-zero-enterprise-learning-roadmap.md`
