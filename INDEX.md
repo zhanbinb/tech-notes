@@ -9,6 +9,7 @@
 - [GitHub](github/README.md)
 - [Go (golang)](golang/README.md)
 - [Docker](docker/README.md)
+- [Kubernetes](kubernetes/README.md)
 - [Solidity](solidity/README.md)
 - [Python](python/README.md)
 - [Tools](tools/README.md)
@@ -49,6 +50,9 @@ _暂无条目_
 - [02 · Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
 - [03 · go-clean-arch 本地跑通实战（含踩坑）](docker/notes/03-go-clean-arch-local-run.md)
 
+### Kubernetes · 当前笔记
+- [01 · Kubernetes、云原生与 AWS：从容器部署到 Pod 调度](kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md)
+
 ### Tools · 当前笔记
 - [01 · Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
 
@@ -72,6 +76,9 @@ _暂无条目_
 ### Docker 容器化
 - [Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
 - [go-clean-arch 本地跑通实战](docker/notes/03-go-clean-arch-local-run.md)
+
+### Kubernetes 与云原生
+- [Kubernetes、云原生与 AWS：从容器部署到 Pod 调度](kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md)
 
 ### 工具与排查
 - [Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
@@ -102,6 +109,7 @@ _暂无条目_
 - `#架构模板` — Clean Architecture / RealWorld
 - `#入口装配` — main.go 流水线、手工 DI、中间件注册
 - `#Docker` — Docker / Docker Compose / Dockerfile / compose.yaml
+- `#Kubernetes` — Pod / Node / Scheduler / EKS / 资源配置 / 自动扩缩容
 - `#chrome` — Chrome 浏览器相关问题排查
 - `#macos` — macOS 系统级问题
 - `#troubleshooting` — 故障排查流程
@@ -115,6 +123,10 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-29** · 新增 Kubernetes 笔记：云原生、AWS 与 Pod 调度配置
+  - 笔记：`kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md`
+  - 关键价值：串联 Docker、Kubernetes、云原生、EC2/EKS 的层次关系，并整理 Pod 资源、节点选择、副本分布及集群扩容的生产配置要点
 
 - **2026-07-27** · 新增 go-zero 笔记：Etcd 服务发现原理与内置集成实战
   - 笔记：`golang/notes/go-zero/02-etcd-service-discovery.md`
