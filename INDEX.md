@@ -9,6 +9,7 @@
 - [GitHub](github/README.md)
 - [Go (golang)](golang/README.md)
 - [Docker](docker/README.md)
+- [Etcd](etcd/README.md)
 - [Kubernetes](kubernetes/README.md)
 - [Solidity](solidity/README.md)
 - [Python](python/README.md)
@@ -53,6 +54,9 @@ _暂无条目_
 ### Kubernetes · 当前笔记
 - [01 · Kubernetes、云原生与 AWS：从容器部署到 Pod 调度](kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md)
 
+### Etcd · 当前笔记
+- [01 · Etcd 运维、排错与企业级实践](etcd/notes/01-etcd-ops-and-enterprise-patterns.md)
+
 ### Tools · 当前笔记
 - [01 · Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
 
@@ -76,6 +80,9 @@ _暂无条目_
 ### Docker 容器化
 - [Dockerfile vs compose.yaml 区别](docker/notes/02-dockerfile-vs-compose-yaml.md)
 - [go-clean-arch 本地跑通实战](docker/notes/03-go-clean-arch-local-run.md)
+
+### Etcd 运维
+- [Etcd 运维、排错与企业级实践](etcd/notes/01-etcd-ops-and-enterprise-patterns.md) · 配套架构：[go-zero/02 Etcd 服务发现原理](../golang/notes/go-zero/02-etcd-service-discovery.md)
 
 ### Kubernetes 与云原生
 - [Kubernetes、云原生与 AWS：从容器部署到 Pod 调度](kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md)
@@ -123,6 +130,10 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-07-30** · 新增 Etcd 分类与运维排错笔记（1 篇）
+  - 笔记：`etcd/notes/01-etcd-ops-and-enterprise-patterns.md`
+  - 关键价值：把"怎么判断 etcd 在不在跑 / Docker 启动常见坑 / connection reset 解读 / 注册信息可视化 / 企业真实形态"沉淀成可复用的运维排错 SOP，与已有的 go-zero 架构笔记互补
 
 - **2026-07-29** · 新增 Kubernetes 笔记：云原生、AWS 与 Pod 调度配置
   - 笔记：`kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md`
