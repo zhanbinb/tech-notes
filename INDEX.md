@@ -53,6 +53,7 @@ _暂无条目_
 
 ### Kubernetes · 当前笔记
 - [01 · Kubernetes、云原生与 AWS：从容器部署到 Pod 调度](kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md)
+- [02 · 企业级 Docker、Kubernetes 与云服务部署：从代码提交到生产运维](kubernetes/notes/02-enterprise-docker-k8s-cloud-deployment-flow.md)
 
 ### Etcd · 当前笔记
 - [01 · Etcd 运维、排错与企业级实践](etcd/notes/01-etcd-ops-and-enterprise-patterns.md)
@@ -86,6 +87,7 @@ _暂无条目_
 
 ### Kubernetes 与云原生
 - [Kubernetes、云原生与 AWS：从容器部署到 Pod 调度](kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md)
+- [企业级 Docker + K8s + 云服务部署完整流程](kubernetes/notes/02-enterprise-docker-k8s-cloud-deployment-flow.md)
 
 ### 工具与排查
 - [Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
@@ -116,7 +118,11 @@ _暂无条目_
 - `#架构模板` — Clean Architecture / RealWorld
 - `#入口装配` — main.go 流水线、手工 DI、中间件注册
 - `#Docker` — Docker / Docker Compose / Dockerfile / compose.yaml
-- `#Kubernetes` — Pod / Node / Scheduler / EKS / 资源配置 / 自动扩缩容
+- `#Kubernetes` — Pod / Node / Scheduler / EKS / 资源配置 / 自动扩缩容 / 发布与回滚
+- `#CI/CD` — 测试、镜像构建、扫描、制品晋级与自动部署
+- `#GitOps` — Git 期望状态、Argo CD / Flux、持续对账
+- `#IaC` — Terraform/OpenTofu、云网络、集群与托管服务
+- `#可观测性` — Metrics / Logs / Traces / SLO / 告警
 - `#chrome` — Chrome 浏览器相关问题排查
 - `#macos` — macOS 系统级问题
 - `#troubleshooting` — 故障排查流程
@@ -130,6 +136,10 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-08-07** · 新增企业级 Docker + Kubernetes + 云服务部署完整流程笔记
+  - 笔记：`kubernetes/notes/02-enterprise-docker-k8s-cloud-deployment-flow.md`
+  - 关键价值：串联应用改造、Docker 多阶段构建、Registry、CI/CD、IaC、EKS/VPC、K8s 清单、GitOps、灰度发布、回滚、可观测性、安全和灾备，形成从代码提交到生产运维的完整 SOP
 
 - **2026-07-30** · 新增 Etcd 分类与运维排错笔记（1 篇）
   - 笔记：`etcd/notes/01-etcd-ops-and-enterprise-patterns.md`

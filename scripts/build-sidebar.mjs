@@ -28,6 +28,7 @@ const CATEGORY_TITLES = {
   docker: "Docker 容器化",
   github: "GitHub",
   golang: "Go 后端学习路线",
+  kubernetes: "Kubernetes",
   python: "Python",
   solidity: "Solidity",
   tools: "工具与排查",
