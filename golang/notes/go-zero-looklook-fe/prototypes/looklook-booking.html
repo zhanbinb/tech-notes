@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>预订 莫干山 · 竹隐 — looklook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand-ink: #3d2e1f;
+        --brand-olive: #6b7f4c;
+        --brand-amber: #d4a574;
+        --surface-paper: #faf7f2;
+        --surface-card: #ffffff;
+        --surface-canvas: #f0ebe3;
+        --text-primary: #2a2a2a;
+        --text-secondary: #6b6358;
+        --text-tertiary: #a39a8e;
+        --border-soft: #e8e1d4;
+        --border-focus: #3d2e1f;
+        --shadow-sm: 0 1px 2px rgba(61, 46, 31, 0.06);
+        --shadow-md: 0 8px 24px rgba(61, 46, 31, 0.08);
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-10: 40px;
+        --space-12: 48px;
+        --radius-sm: 4px;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --radius-pill: 9999px;
+        --font-serif: 'Fraunces', 'Noto Serif SC', serif;
+        --font-sans: 'Inter', 'Noto Sans SC', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--surface-paper);
+        color: var(--text-primary);
+        font-family: var(--font-sans);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* TOPBAR with back */
+      .topbar {
+        display: flex;
+        align-items: center;
+        padding: var(--space-6) var(--space-10);
+        background: var(--surface-paper);
+        border-bottom: 1px solid var(--border-soft);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .back {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        font-size: 15px;
+        color: var(--text-secondary);
+        cursor: pointer;
+      }
+      .back:hover {
+        color: var(--brand-ink);
+      }
+      .back .arr {
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: var(--space-12) var(--space-8) var(--space-20);
+      }
+
+      /* HOMESTAY SUMMARY */
+      .summary {
+        display: flex;
+        gap: var(--space-4);
+        padding: var(--space-4);
+        background: var(--surface-card);
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--space-10);
+      }
+      .summary .thumb {
+        width: 84px;
+        height: 84px;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .summary h3 {
+        font-family: var(--font-serif);
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .summary p {
+        font-size: 13px;
+        color: var(--text-secondary);
+      }
+
+      /* FORM CARD */
+      .card {
+        background: var(--surface-card);
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-md);
+        padding: var(--space-10);
+        margin-bottom: var(--space-6);
+      }
+      .card h2 {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-size: 26px;
+        margin-bottom: var(--space-8);
+        letter-spacing: -0.01em;
+      }
+      .field {
+        margin-bottom: var(--space-6);
+      }
+      .field label {
+        display: block;
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin-bottom: var(--space-2);
+        font-weight: 500;
+      }
+      .input,
+      .select,
+      .textarea {
+        width: 100%;
+        padding: 14px 16px;
+        background: var(--surface-paper);
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-sm);
+        font-size: 16px;
+        color: var(--text-primary);
+        font-family: var(--font-sans);
+        transition: border-color 0.15s;
+      }
+      .input:focus,
+      .select:focus,
+      .textarea:focus {
+        outline: none;
+        border-color: var(--border-focus);
+      }
+      .textarea {
+        min-height: 80px;
+        resize: vertical;
+        font-family: var(--font-sans);
+      }
+
+      .date-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-3);
+        padding: var(--space-4);
+        background: var(--surface-canvas);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .checkbox:hover {
+        background: #eae3d6;
+      }
+      .checkbox input {
+        margin-top: 3px;
+        accent-color: var(--brand-ink);
+        width: 16px;
+        height: 16px;
+      }
+      .checkbox .lbl {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .checkbox .desc {
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin-top: 2px;
+      }
+
+      /* PRICE */
+      .price-card .row {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--space-3) 0;
+        font-size: 15px;
+        color: var(--text-secondary);
+      }
+      .price-card .total {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: var(--space-5) 0 var(--space-2);
+        border-top: 1px solid var(--border-soft);
+        margin-top: var(--space-3);
+      }
+      .price-card .total .label {
+        font-family: var(--font-serif);
+        font-size: 20px;
+      }
+      .price-card .total .val {
+        font-family: var(--font-serif);
+        font-size: 32px;
+        font-weight: 500;
+        color: var(--brand-ink);
+        letter-spacing: -0.01em;
+      }
+
+      /* SUBMIT */
+      .submit {
+        display: block;
+        width: 100%;
+        padding: 18px 0;
+        background: var(--brand-ink);
+        color: var(--surface-paper);
+        border-radius: var(--radius-pill);
+        font-size: 16px;
+        font-weight: 500;
+        font-family: var(--font-sans);
+        border: 0;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          background 0.15s;
+        margin-top: var(--space-4);
+      }
+      .submit:hover {
+        transform: translateY(-1px);
+        background: #2a1e14;
+      }
+      .agree {
+        font-size: 13px;
+        color: var(--text-tertiary);
+        text-align: center;
+        margin-top: var(--space-4);
+        line-height: 1.6;
+      }
+      .agree a {
+        color: var(--text-secondary);
+        text-decoration: underline;
+      }
+
+      /* MOBILE STICKY */
+      .mobile-foot {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--surface-card);
+        border-top: 1px solid var(--border-soft);
+        padding: 14px var(--space-4);
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+      }
+      .mobile-foot .price {
+        font-family: var(--font-serif);
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .mobile-foot .price small {
+        font-size: 12px;
+        font-family: var(--font-sans);
+        color: var(--text-secondary);
+        font-weight: 400;
+      }
+      .mobile-foot button {
+        padding: 12px 28px;
+        background: var(--brand-ink);
+        color: var(--surface-paper);
+        border-radius: var(--radius-pill);
+        font-size: 14px;
+        border: 0;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: var(--space-8) var(--space-4) var(--space-12);
+        }
+        .card {
+          padding: var(--space-6);
+        }
+        .topbar {
+          padding: var(--space-4);
+        }
+        .mobile-foot {
+          display: flex !important;
+        }
+        body {
+          padding-bottom: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <a href="#" class="back"><span class="arr">←</span> 返回</a>
+    </div>
+
+    <div class="container">
+      <!-- 民宿摘要 -->
+      <div class="summary">
+        <div class="thumb"
+          ><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&q=80" alt=""
+        /></div>
+        <div style="display: flex; flex-direction: column; justify-content: center">
+          <h3>莫干山 · 竹隐</h3>
+          <p>浙江湖州 · 山景双卧 · 最多入住 6 人</p>
+        </div>
+      </div>
+
+      <!-- 主表单卡 -->
+      <div class="card">
+        <h2>预 订 信 息</h2>
+
+        <div class="field">
+          <label>入住 / 退房日期</label>
+          <div class="date-row">
+            <input type="text" class="input" value="2026-08-12" />
+            <input type="text" class="input" value="2026-08-14" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>入住人数</label>
+          <select class="select">
+            <option>1 位成人</option>
+            <option selected>2 位成人</option>
+            <option>3 位成人</option>
+            <option>4 位成人</option>
+            <option>2 成人 + 1 儿童</option>
+            <option>2 成人 + 2 儿童</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom: 0">
+          <label>餐食</label>
+          <label class="checkbox">
+            <input type="checkbox" checked />
+            <div>
+              <div class="lbl">含早餐 · ¥30 / 人 / 晚</div>
+              <div class="desc">含本地笋干粥、鸡蛋、小菜、当季鲜榨果汁</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- 备注 -->
+      <div class="card">
+        <h2>备 注 (可选)</h2>
+        <div class="field" style="margin-bottom: 0">
+          <textarea class="textarea" placeholder="对房型、入住时间、特殊需求等的备注..."></textarea>
+        </div>
+      </div>
+
+      <!-- 价格明细 -->
+      <div class="card price-card">
+        <h2>价 格 明 细</h2>
+        <div class="row"><span>房费 ¥680 × 2 晚</span><span>¥1,360</span></div>
+        <div class="row"><span>餐费 ¥30 × 2 人 × 2 晚</span><span>¥120</span></div>
+        <div class="total">
+          <span class="label">合 计</span>
+          <span class="val">¥1,480</span>
+        </div>
+      </div>
+
+      <button class="submit">提 交 订 单 · ¥1,480</button>
+      <p class="agree"
+        >点击按钮即视为同意 <a href="#">《looklook 服务协议》</a> 和 <a href="#">《取消政策》</a></p
+      >
+    </div>
+
+    <!-- Mobile sticky -->
+    <div class="mobile-foot" style="display: none">
+      <div class="price">¥1,480 <small> · 2 晚</small></div>
+      <button>提交订单</button>
+    </div>
+  </body>
+</html>

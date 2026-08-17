@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>looklook · 首页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* === 锁定的 Design Token (副本) === */
+      :root {
+        --brand-ink: #3d2e1f;
+        --brand-olive: #6b7f4c;
+        --brand-amber: #d4a574;
+        --surface-paper: #faf7f2;
+        --surface-card: #ffffff;
+        --surface-canvas: #f0ebe3;
+        --text-primary: #2a2a2a;
+        --text-secondary: #6b6358;
+        --text-tertiary: #a39a8e;
+        --border-soft: #e8e1d4;
+        --shadow-sm: 0 1px 2px rgba(61, 46, 31, 0.06);
+        --shadow-md: 0 8px 24px rgba(61, 46, 31, 0.08);
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-10: 40px;
+        --space-12: 48px;
+        --space-16: 64px;
+        --space-20: 80px;
+        --radius-sm: 4px;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --radius-pill: 9999px;
+        --font-serif: 'Fraunces', 'Noto Serif SC', serif;
+        --font-sans: 'Inter', 'Noto Sans SC', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--surface-paper);
+        color: var(--text-primary);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 var(--space-8);
+      }
+
+      /* ====== NAV ====== */
+      nav.top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-6) var(--space-10);
+        color: var(--surface-paper);
+        z-index: 10;
+      }
+      .logo {
+        font-family: var(--font-serif);
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+      .nav-links {
+        display: flex;
+        gap: var(--space-8);
+        font-size: 15px;
+      }
+      .nav-links a {
+        opacity: 0.85;
+        transition: opacity 0.2s;
+      }
+      .nav-links a:hover {
+        opacity: 1;
+      }
+      .nav-cta {
+        padding: 8px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: var(--radius-pill);
+        font-size: 15px;
+        transition: all 0.2s;
+      }
+      .nav-cta:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        height: 80vh;
+        min-height: 560px;
+        position: relative;
+        background:
+          linear-gradient(to bottom, rgba(61, 46, 31, 0.25), rgba(61, 46, 31, 0.55)),
+          url('https://images.unsplash.com/photo-1528310387641-39b44e629091?w=1920&q=80') center/cover;
+        display: flex;
+        align-items: center;
+        color: var(--surface-paper);
+      }
+      .hero-inner {
+        width: 100%;
+        max-width: 720px;
+        padding: 0 var(--space-10);
+      }
+      .hero h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(44px, 6.5vw, 84px);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        margin-bottom: var(--space-6);
+      }
+      .hero .sub {
+        font-size: 18px;
+        opacity: 0.85;
+        margin-bottom: var(--space-10);
+        font-weight: 300;
+      }
+      .hero .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: 14px 28px;
+        background: var(--brand-amber);
+        color: var(--brand-ink);
+        border-radius: var(--radius-pill);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition: transform 0.2s;
+      }
+      .hero .cta:hover {
+        transform: translateY(-2px);
+      }
+      .hero .cta-arrow {
+        display: inline-block;
+        transition: transform 0.2s;
+      }
+      .hero .cta:hover .cta-arrow {
+        transform: translateX(4px);
+      }
+
+      /* ====== SECTIONS ====== */
+      section {
+        padding: var(--space-20) 0;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: var(--space-12);
+      }
+      .section-head h2 {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-size: clamp(34px, 4vw, 52px);
+        letter-spacing: -0.02em;
+      }
+      .section-head .more {
+        font-size: 15px;
+        color: var(--text-secondary);
+      }
+      .section-head .more:hover {
+        color: var(--brand-ink);
+      }
+
+      /* 猜你喜欢 */
+      .homestay-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-8);
+      }
+      .homestay-card {
+        cursor: pointer;
+      }
+      .homestay-card .cover {
+        position: relative;
+        aspect-ratio: 4/5;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-bottom: var(--space-4);
+      }
+      .homestay-card .cover img {
+        transition: transform 0.5s;
+      }
+      .homestay-card:hover .cover img {
+        transform: scale(1.04);
+      }
+      .homestay-card .price-tag {
+        position: absolute;
+        right: var(--space-3);
+        top: var(--space-3);
+        background: rgba(250, 247, 242, 0.95);
+        color: var(--brand-ink);
+        padding: 4px 10px;
+        border-radius: var(--radius-sm);
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .homestay-card h3 {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .homestay-card .sub {
+        font-size: 15px;
+        color: var(--text-secondary);
+      }
+
+      /* 好房东 */
+      .boss-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-8);
+      }
+      .boss-card {
+        text-align: center;
+        cursor: pointer;
+      }
+      .boss-card .avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        margin: 0 auto var(--space-3);
+        background: var(--surface-canvas);
+        overflow: hidden;
+        border: 1px solid var(--border-soft);
+      }
+      .boss-card h3 {
+        font-family: var(--font-serif);
+        font-size: 19px;
+        font-weight: 500;
+      }
+      .boss-card .rank {
+        display: inline-block;
+        margin-top: 4px;
+        padding: 2px 8px;
+        border-radius: var(--radius-pill);
+        background: var(--brand-amber);
+        color: var(--brand-ink);
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      /* 民宿店铺 */
+      .biz-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+      }
+      .biz-card .cover {
+        position: relative;
+        aspect-ratio: 16/10;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-bottom: var(--space-4);
+      }
+      .biz-card .cover img {
+        transition: transform 0.5s;
+      }
+      .biz-card:hover .cover img {
+        transform: scale(1.04);
+      }
+      .biz-card .star {
+        position: absolute;
+        left: var(--space-3);
+        bottom: var(--space-3);
+        background: rgba(61, 46, 31, 0.85);
+        color: var(--brand-amber);
+        padding: 4px 10px;
+        border-radius: var(--radius-sm);
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .biz-card h3 {
+        font-family: var(--font-serif);
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .biz-card .tags {
+        font-size: 13px;
+        color: var(--text-tertiary);
+        margin-top: 4px;
+        letter-spacing: 0.04em;
+      }
+
+      /* FOOTER */
+      footer {
+        margin-top: var(--space-16);
+        padding: var(--space-12) 0;
+        border-top: 1px solid var(--border-soft);
+        font-size: 15px;
+        color: var(--text-secondary);
+      }
+
+      /* 移动 tab bar */
+      .tab-bar {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--surface-card);
+        border-top: 1px solid var(--border-soft);
+        padding: 12px 0 16px;
+        justify-content: space-around;
+        z-index: 99;
+      }
+      .tab-bar a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        color: var(--text-tertiary);
+        font-size: 11px;
+      }
+      .tab-bar a.active {
+        color: var(--brand-ink);
+      }
+
+      /* 响应式 */
+      @media (max-width: 1024px) {
+        .homestay-grid,
+        .boss-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .biz-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 var(--space-4);
+        }
+        nav.top {
+          padding: var(--space-4);
+        }
+        .nav-links {
+          display: none;
+        }
+        section {
+          padding: var(--space-12) 0;
+        }
+        .homestay-grid,
+        .boss-grid,
+        .biz-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
+        }
+        .tab-bar {
+          display: flex;
+        }
+        body {
+          padding-bottom: 72px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 顶部导航 -->
+    <nav class="top">
+      <a href="/" class="logo">looklook</a>
+      <div class="nav-links">
+        <a href="/homestay">发现民宿</a>
+        <a href="/landlord">好房东</a>
+        <a href="/u/me">我的</a>
+      </div>
+      <a href="/login" class="nav-cta">登录 / 注册</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>在 慢 的 地 方<br />找 回 自 己</h1>
+        <p class="sub">2026 夏季精选 · 12 个隐世民宿 · 6 位在地房东</p>
+        <a href="/homestay" class="cta">探索民宿 <span class="cta-arrow">→</span></a>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- 猜你喜欢 -->
+      <section>
+        <div class="section-head">
+          <h2>你可能喜欢</h2>
+          <a href="/homestay" class="more">查看全部 →</a>
+        </div>
+        <div class="homestay-grid">
+          <div class="homestay-card">
+            <div class="cover">
+              <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&q=80" alt="" />
+              <span class="price-tag">¥680/晚</span>
+            </div>
+            <h3>莫干山 · 竹隐</h3>
+            <p class="sub">浙江湖州 · 山景双卧</p>
+          </div>
+          <div class="homestay-card">
+            <div class="cover">
+              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80" alt="" />
+              <span class="price-tag">¥1280/晚</span>
+            </div>
+            <h3>大理 · 苍洱</h3>
+            <p class="sub">云南大理 · 湖景套房</p>
+          </div>
+          <div class="homestay-card">
+            <div class="cover">
+              <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" alt="" />
+              <span class="price-tag">¥460/晚</span>
+            </div>
+            <h3>婺源 · 篁岭</h3>
+            <p class="sub">江西上饶 · 梯田雅居</p>
+          </div>
+          <div class="homestay-card">
+            <div class="cover">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80" alt="" />
+              <span class="price-tag">¥980/晚</span>
+            </div>
+            <h3>崇左 · 边田</h3>
+            <p class="sub">广西崇左 · 田园院落</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 好房东 -->
+      <section>
+        <div class="section-head">
+          <h2>好 房 东</h2>
+          <a href="/landlord" class="more">查看全部 →</a>
+        </div>
+        <div class="boss-grid">
+          <div class="boss-card">
+            <div class="avatar"><img src="https://i.pravatar.cc/120?img=32" alt="" /></div>
+            <h3>林海音</h3>
+            <span class="rank">No.1 · 莫干山</span>
+          </div>
+          <div class="boss-card">
+            <div class="avatar"><img src="https://i.pravatar.cc/120?img=45" alt="" /></div>
+            <h3>李行之</h3>
+            <span class="rank">No.2 · 大理</span>
+          </div>
+          <div class="boss-card">
+            <div class="avatar"><img src="https://i.pravatar.cc/120?img=20" alt="" /></div>
+            <h3>白小染</h3>
+            <span class="rank">No.3 · 婺源</span>
+          </div>
+          <div class="boss-card">
+            <div class="avatar"><img src="https://i.pravatar.cc/120?img=12" alt="" /></div>
+            <h3>陈一诺</h3>
+            <span class="rank">No.4 · 崇左</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 民宿店铺 -->
+      <section>
+        <div class="section-head">
+          <h2>精 选 民 宿 店 铺</h2>
+          <a href="/landlord" class="more">查看全部 →</a>
+        </div>
+        <div class="biz-grid">
+          <div class="biz-card">
+            <div class="cover">
+              <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&q=80" alt="" />
+              <span class="star">★ 4.9</span>
+            </div>
+            <h3>山居 9 号</h3>
+            <p class="tags">MOGANSHAN · 竹 · 山泉 · 古道</p>
+          </div>
+          <div class="biz-card">
+            <div class="cover">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80" alt="" />
+              <span class="star">★ 4.8</span>
+            </div>
+            <h3>苍洱小院</h3>
+            <p class="tags">DALI · 湖景 · 茶室 · 白族</p>
+          </div>
+          <div class="biz-card">
+            <div class="cover">
+              <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&q=80" alt="" />
+              <span class="star">★ 4.7</span>
+            </div>
+            <h3>篁岭晒秋</h3>
+            <p class="tags">WUYUAN · 梯田 · 晒秋 · 油菜花</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div
+        class="container"
+        style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px"
+      >
+        <span>© 2026 looklook · 在慢的地方找回自己</span>
+        <span>关于 · 帮助 · 协议</span>
+      </div>
+    </footer>
+
+    <!-- 移动 Tab Bar -->
+    <nav class="tab-bar">
+      <a href="/" class="active">首页</a>
+      <a href="/homestay">民宿</a>
+      <a href="/landlord">房东</a>
+      <a href="/order">订单</a>
+      <a href="/u/me">我的</a>
+    </nav>
+  </body>
+</html>

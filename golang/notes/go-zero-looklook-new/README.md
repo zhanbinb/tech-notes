@@ -210,7 +210,7 @@ kafka-console-consumer.sh --bootstrap-server localhost:9094 \
 - 项目 GitHub：https://github.com/zhanbinb/go-zero-looklook-new
 - 业务基线：https://github.com/Mikaelemmmm/go-zero-looklook
 - go-zero 官方：https://go-zero.dev
-- 父目录：[`../README.md`](../README.md) · [`../02-etcd-service-discovery.md`](../02-etcd-service-discovery.md)
+- 父目录：[`../go-zero/README.md`](../go-zero/README.md) · [`../go-zero/02-etcd-service-discovery.md`](../go-zero/02-etcd-service-discovery.md)
 
 ---
 

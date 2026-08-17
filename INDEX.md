@@ -37,6 +37,9 @@ _暂无条目_
   - [02 · Etcd 服务发现：原理与 go-zero 实战](golang/notes/go-zero/02-etcd-service-discovery.md)
 - [go-zero-looklook-new · 项目笔记归档（2026 升级版）](golang/notes/go-zero-looklook-new/README.md)
   - 22 篇 step 升级日志 + 4 篇 support + 15 章官方教程参考，详见子目录 README
+- [go-zero-looklook-fe · 前端项目归档（Vue 3 + TS · 11 阶段路线）](golang/notes/go-zero-looklook-fe/README.md)
+  - 镜像归档：AGENTS / ROADMAP / PRD / dev-backend / 7 个 ADR / design tokens / 完整 OpenAPI 契约（713 行）/ 3 个 HTML 原型
+  - 与 [go-zero-looklook-new](../go-zero-looklook-new/README.md) 配对使用
 - [go-clean-arch · Clean Architecture 项目拆解](golang/notes/go-clean-arch/)
   - [01 · Echo vs Gin](golang/notes/go-clean-arch/01-echo-vs-gin.md)
   - [02 · main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md)
@@ -77,6 +80,7 @@ _暂无条目_
 - [go-zero 企业级实战路线 · 订单交易系统 8～10 周计划](golang/notes/go-zero/01-go-zero-enterprise-learning-roadmap.md)
 - [Etcd 服务发现：原理与 go-zero 实战](golang/notes/go-zero/02-etcd-service-discovery.md)
 - [go-zero-looklook-new · 2026 升级版项目归档](golang/notes/go-zero-looklook-new/README.md) — 22 篇 step + 4 篇 support + 15 章教程（ch 4-8 业务闭环、ch 11-13 可观测四件套、网关、库升级）
+- [go-zero-looklook-fe · Vue 3 + TS 前端项目归档](golang/notes/go-zero-looklook-fe/README.md) — 11 阶段路线、7 个 ADR、完整 OpenAPI、3 个 HTML 原型
 - [main.go 拆解 · Clean Architecture 入口视角](golang/notes/go-clean-arch/02-main-go-clean-arch.md) · 配套实战：[docker/03 go-clean-arch 跑通](./docker/notes/03-go-clean-arch-local-run.md)
 - [Delivery 层拆解 · internal/rest/article.go](golang/notes/go-clean-arch/03-rest-delivery-layer.md) · [Repository 层拆解](golang/notes/go-clean-arch/04-repository-mysql-layer.md) · [native sql vs sqlx/gorm/sqlc 选型](golang/notes/go-clean-arch/05-native-sql-vs-orm.md) · [06 cmd/wire/Bearer](golang/notes/go-clean-arch/06-cmd-entries-wire-and-bearer.md) · [07 Register/DI](golang/notes/go-clean-arch/07-register-call-chain-and-di.md) · [08 三层 Article 不是冗余](golang/notes/go-clean-arch/08-three-layer-article-why-not-redundant.md) · [09 gRPC proto/代码生成/调用链](golang/notes/go-clean-arch/09-grpc-proto-codegen-and-call-chain.md) · [10 RESTful vs gRPC](golang/notes/go-clean-arch/10-restful-vs-grpc.md)
 - [企业级项目分级 · 第一~第五梯队](golang/notes/02-go-tier1-enterprise-frameworks.md) · [03](golang/notes/03-go-tier2-cloudnative-infra.md) · [04](golang/notes/04-go-tier3-storage-and-mq.md) · [05](golang/notes/05-go-tier4-web3-blockchain.md) · [06](golang/notes/06-go-tier5-business-systems.md)
@@ -139,6 +143,10 @@ _暂无条目_
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
 
 ## 最近更新
+
+- **2026-08-17** · 新增 Go 笔记：go-zero-looklook-fe 前端项目归档（Vue 3 + TS 11 阶段路线）
+  - 笔记：`golang/notes/go-zero-looklook-fe/README.md`
+  - 关键价值：把前端项目全部原始文档（AGENTS / ROADMAP / PRD / dev-backend）+ 7 个 ADR + design tokens + 完整 OpenAPI 契约（713 行）+ 3 个 HTML 原型一次性镜像归档，与后端归档 [`go-zero-looklook-new`](golang/notes/go-zero-looklook-new/README.md) 形成前后端成对参考
 
 - **2026-08-17** · 新增 Go 笔记：go-zero-looklook-new（2026 升级版）项目归档
   - 入口：`golang/notes/go-zero-looklook-new/README.md`（作为独立项目目录，与 go-zero/ 同级，而非其子目录）

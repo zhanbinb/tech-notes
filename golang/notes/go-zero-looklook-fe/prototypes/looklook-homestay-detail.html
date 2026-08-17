@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>莫干山 · 竹隐 — looklook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand-ink: #3d2e1f;
+        --brand-olive: #6b7f4c;
+        --brand-amber: #d4a574;
+        --surface-paper: #faf7f2;
+        --surface-card: #ffffff;
+        --surface-canvas: #f0ebe3;
+        --text-primary: #2a2a2a;
+        --text-secondary: #6b6358;
+        --text-tertiary: #a39a8e;
+        --border-soft: #e8e1d4;
+        --shadow-sm: 0 1px 2px rgba(61, 46, 31, 0.06);
+        --shadow-md: 0 8px 24px rgba(61, 46, 31, 0.08);
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-10: 40px;
+        --space-12: 48px;
+        --space-16: 64px;
+        --radius-sm: 4px;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --radius-pill: 9999px;
+        --font-serif: 'Fraunces', 'Noto Serif SC', serif;
+        --font-sans: 'Inter', 'Noto Sans SC', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--surface-paper);
+        color: var(--text-primary);
+        font-family: var(--font-sans);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 var(--space-8);
+      }
+
+      /* NAV */
+      nav.top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-6) var(--space-10);
+        background: var(--surface-paper);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .logo {
+        font-family: var(--font-serif);
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+      .nav-links {
+        display: flex;
+        gap: var(--space-8);
+        font-size: 15px;
+      }
+      .nav-cta {
+        padding: 8px 18px;
+        background: var(--brand-ink);
+        color: var(--surface-paper);
+        border-radius: var(--radius-pill);
+        font-size: 14px;
+      }
+
+      /* BREADCRUMB */
+      .crumb {
+        padding: var(--space-5) 0;
+        font-size: 14px;
+        color: var(--text-secondary);
+      }
+      .crumb a {
+        color: var(--text-secondary);
+      }
+      .crumb .sep {
+        margin: 0 8px;
+        opacity: 0.4;
+      }
+
+      /* GALLERY */
+      .gallery {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: var(--space-2);
+        height: 480px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-bottom: var(--space-12);
+      }
+      .gallery img {
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      .gallery img:hover {
+        opacity: 0.92;
+      }
+
+      /* LAYOUT */
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: var(--space-16);
+        margin-bottom: var(--space-20);
+      }
+      .main {
+        min-width: 0;
+      }
+      .head h1 {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-size: clamp(32px, 4vw, 48px);
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        margin-bottom: var(--space-3);
+      }
+      .head .meta {
+        display: flex;
+        gap: var(--space-6);
+        font-size: 15px;
+        color: var(--text-secondary);
+        margin-bottom: var(--space-10);
+      }
+      .head .meta .star {
+        color: var(--brand-amber);
+      }
+
+      .section {
+        padding: var(--space-12) 0;
+        border-top: 1px solid var(--border-soft);
+      }
+      .section h2 {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-size: 30px;
+        margin-bottom: var(--space-6);
+        letter-spacing: -0.01em;
+      }
+      .section p {
+        font-size: 17px;
+        line-height: 1.95;
+        color: var(--text-primary);
+        margin-bottom: var(--space-5);
+        max-width: 680px;
+      }
+      .section .inline-img {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin: var(--space-6) 0;
+        aspect-ratio: 16/9;
+      }
+
+      .comment-list .comment {
+        padding: var(--space-6) 0;
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .comment-list .comment:last-child {
+        border-bottom: 0;
+      }
+      .comment .top {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        margin-bottom: var(--space-3);
+      }
+      .comment .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--surface-canvas);
+      }
+      .comment .name {
+        font-weight: 500;
+      }
+      .comment .date {
+        font-size: 14px;
+        color: var(--text-tertiary);
+        margin-left: auto;
+      }
+      .comment .star {
+        color: var(--brand-amber);
+        font-size: 14px;
+        margin-bottom: var(--space-2);
+      }
+      .comment p {
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: none;
+      }
+
+      /* RIGHT: BOOKING CARD */
+      .booking-card {
+        position: sticky;
+        top: var(--space-6);
+        background: var(--surface-card);
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-md);
+        padding: var(--space-8);
+        box-shadow: var(--shadow-md);
+      }
+      .booking-card .price {
+        font-family: var(--font-serif);
+        font-size: 36px;
+        font-weight: 500;
+        color: var(--brand-ink);
+        letter-spacing: -0.01em;
+      }
+      .booking-card .price small {
+        font-size: 14px;
+        color: var(--text-secondary);
+        font-family: var(--font-sans);
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      .booking-card .star-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin: var(--space-2) 0 var(--space-6);
+      }
+      .booking-card .star-row .star {
+        color: var(--brand-amber);
+      }
+
+      .booking-card .field {
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-sm);
+        margin-bottom: var(--space-3);
+      }
+      .booking-card .field .row {
+        display: flex;
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .booking-card .field .row:last-child {
+        border-bottom: 0;
+      }
+      .booking-card .field .cell {
+        flex: 1;
+        padding: var(--space-4);
+      }
+      .booking-card .field label {
+        font-size: 12px;
+        color: var(--text-tertiary);
+        display: block;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+      .booking-card .field .val {
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .booking-card .cta {
+        display: block;
+        width: 100%;
+        padding: 14px 0;
+        text-align: center;
+        background: var(--brand-ink);
+        color: var(--surface-paper);
+        border-radius: var(--radius-pill);
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: var(--space-4);
+        transition: transform 0.15s;
+        cursor: pointer;
+        border: 0;
+      }
+      .booking-card .cta:hover {
+        transform: translateY(-1px);
+      }
+      .booking-card .note {
+        font-size: 13px;
+        color: var(--text-tertiary);
+        text-align: center;
+        margin-top: var(--space-3);
+      }
+
+      /* MOBILE BOOKING BAR */
+      .mobile-book {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--surface-card);
+        border-top: 1px solid var(--border-soft);
+        padding: 12px var(--space-4);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+      }
+      .mobile-book .price {
+        font-family: var(--font-serif);
+        font-size: 22px;
+        font-weight: 500;
+      }
+      .mobile-book .price small {
+        font-size: 12px;
+        font-family: var(--font-sans);
+        color: var(--text-secondary);
+        font-weight: 400;
+      }
+      .mobile-book .cta {
+        padding: 10px 24px;
+        background: var(--brand-ink);
+        color: var(--surface-paper);
+        border-radius: var(--radius-pill);
+        font-size: 14px;
+        border: 0;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1024px) {
+        .layout {
+          grid-template-columns: 1fr;
+          gap: var(--space-10);
+        }
+        .booking-card {
+          position: static;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 var(--space-4);
+        }
+        nav.top {
+          padding: var(--space-4);
+        }
+        .nav-links {
+          display: none;
+        }
+        .gallery {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(5, 1fr);
+          height: auto;
+          gap: 0;
+        }
+        .gallery > div {
+          height: 140px;
+        }
+        .mobile-book {
+          display: flex !important;
+        }
+        body {
+          padding-bottom: 72px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="top">
+      <a href="/" class="logo">looklook</a>
+      <div class="nav-links">
+        <a href="/homestay">发现民宿</a>
+        <a href="/landlord">好房东</a>
+        <a href="/order">订单</a>
+        <a href="/u/me">我的</a>
+      </div>
+      <a href="/u/me" class="nav-cta">林海音</a>
+    </nav>
+
+    <div class="container">
+      <div class="crumb">
+        <a href="/">首页</a>
+        <span class="sep">/</span>
+        <a href="/homestay">民宿</a>
+        <span class="sep">/</span>
+        <a href="/homestay?tag=莫干山">莫干山</a>
+        <span class="sep">/</span>
+        <span style="color: var(--brand-ink)">竹隐</span>
+      </div>
+
+      <!-- GALLERY -->
+      <div class="gallery">
+        <div style="grid-row: span 2">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80" alt="" />
+        </div>
+        <div
+          ><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt=""
+        /></div>
+        <div><img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80" alt="" /></div>
+        <div
+          ><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80" alt=""
+        /></div>
+        <div
+          ><img src="https://images.unsplash.com/photo-1564540583246-934409427776?w=800&q=80" alt=""
+        /></div>
+      </div>
+
+      <!-- LAYOUT -->
+      <div class="layout">
+        <!-- LEFT: MAIN -->
+        <div class="main">
+          <div class="head">
+            <h1>莫干山 · 竹隐</h1>
+            <div class="meta">
+              <span class="star">★ 4.9</span>
+              <span>128 条评价</span>
+              <span>浙江 · 湖州 · 德清</span>
+              <span>房东 林海音 · 在地 8 年</span>
+            </div>
+          </div>
+
+          <div class="section" style="border-top: 0; padding-top: 0">
+            <h2>一 片 竹 林 后 的 山 居</h2>
+            <p
+              >藏于莫干山北麓，离主干道 6
+              分钟车程，沿着竹林小径走到尽头就是了。整屋木构，三间客房朝南，原木与白墙之间只放了必需家具。</p
+            >
+            <p>清晨推开窗，整面竹海在 30 米外。早饭是房东阿姨做的笋干粥，晚上可以借厨房烧一壶山泉水泡茶。</p>
+            <div class="inline-img"
+              ><img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=1600&q=80" alt=""
+            /></div>
+            <p>含早。免费停车位 2 个。可加购晚餐（¥80/人，2 菜 1 汤）。不接受宠物，不在屋内吸烟。</p>
+          </div>
+
+          <div class="section">
+            <h2>房 间</h2>
+            <p>大床房 1 间（2m × 2m），双床房 1 间，阁楼榻榻米 1 间。最多入住 6 人，独立卫浴，浴缸在阁楼。</p>
+          </div>
+
+          <div class="section">
+            <h2>评 价 (128)</h2>
+            <div class="comment-list">
+              <div class="comment">
+                <div class="top">
+                  <div class="avatar"><img src="https://i.pravatar.cc/80?img=15" alt="" /></div>
+                  <span class="name">周芷若</span>
+                  <span class="date">2026 / 07 / 28</span>
+                </div>
+                <div class="star">★ ★ ★ ★ ★</div>
+                <p>竹林很深，早上醒来真的可以听见鸟。阿姨做的笋干粥非常香，房间也很干净，比照片还好看。</p>
+              </div>
+              <div class="comment">
+                <div class="top">
+                  <div class="avatar"><img src="https://i.pravatar.cc/80?img=27" alt="" /></div>
+                  <span class="name">李寻欢</span>
+                  <span class="date">2026 / 07 / 15</span>
+                </div>
+                <div class="star">★ ★ ★ ★ ★</div>
+                <p>带父母来的，爸妈很喜欢。有个小院子可以泡茶。管家很周到，回复也快。</p>
+              </div>
+              <div class="comment">
+                <div class="top">
+                  <div class="avatar"><img src="https://i.pravatar.cc/80?img=49" alt="" /></div>
+                  <span class="name">Jasmine</span>
+                  <span class="date">2026 / 07 / 03</span>
+                </div>
+                <div class="star">★ ★ ★ ★ ★</div>
+                <p
+                  >The best homestay I've ever stayed. Quiet, beautiful, the host is so kind. Will come back
+                  next summer.</p
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: BOOKING -->
+        <aside>
+          <div class="booking-card">
+            <div class="price">¥680 <small>/ 晚</small></div>
+            <div class="star-row"
+              ><span class="star">★</span> 4.9 <span style="opacity: 0.5">·</span> 128 条评价</div
+            >
+
+            <div class="field">
+              <div class="row">
+                <div class="cell">
+                  <label>入住</label>
+                  <div class="val">08-12</div>
+                </div>
+                <div class="cell">
+                  <label>退房</label>
+                  <div class="val">08-14</div>
+                </div>
+              </div>
+              <div class="row" style="display: block; border-bottom: 0">
+                <div class="cell">
+                  <label>人数</label>
+                  <div class="val">2 位成人</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="cta">立即预订</button>
+            <p class="note">暂不收取费用，到店支付</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Mobile sticky booking -->
+    <div class="mobile-book" style="display: none">
+      <div class="price">¥680 <small>/ 晚</small></div>
+      <button class="cta">立即预订</button>
+    </div>
+  </body>
+</html>

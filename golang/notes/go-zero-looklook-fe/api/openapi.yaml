@@ -1,0 +1,710 @@
+openapi: 3.1.0
+
+info:
+  title: go-zero-looklook API
+  version: 0.1.0
+  description: |
+    前端用 OpenAPI 契约，由 docs/api/inventory.md 手写生成。
+    19 个 REST 端点全部集中在 4 个微服务中。
+    ⚠️ 注意：所有接口均为 POST（go-zero 默认习惯）。
+  contact:
+    name: Frontend Codex
+
+servers:
+  - url: /usercenter/v1
+    description: usercenter (8000)
+  - url: /travel/v1
+    description: travel (8001)
+  - url: /order/v1
+    description: order (8002)
+  - url: /payment/v1
+    description: payment (8003)
+
+security: [] # 默认无；jwt-protected 接口单独声明
+
+tags:
+  - name: usercenter
+  - name: travel
+  - name: order
+  - name: payment
+
+paths:
+  # ============================================================
+  #  usercenter :1004
+  # ============================================================
+  /user/register:
+    post:
+      tags: [usercenter]
+      summary: 用户注册
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RegisterReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RegisterResp' }
+
+  /user/login:
+    post:
+      tags: [usercenter]
+      summary: 用户登录（手机号 + 密码）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LoginReq' }
+      responses:
+        '200':
+          description: OK 返回 token
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LoginResp' }
+
+  /user/detail:
+    post:
+      tags: [usercenter]
+      summary: 当前用户详情
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/EmptyReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/UserDetailResp' }
+
+  /user/wxMiniAuth:
+    post:
+      tags: [usercenter]
+      summary: 微信小程序授权（前端用 wx.login 取 code 再调）
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/WxMiniAuthReq' }
+      responses:
+        '200':
+          description: OK 返回 token
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LoginResp' }
+
+  # ============================================================
+  #  travel :1003   (no jwt)
+  # ============================================================
+  /homestay/homestayList:
+    post:
+      tags: [travel]
+      summary: 民宿列表（分页）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/HomestayListReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/HomestayListResp' }
+
+  /homestay/businessList:
+    post:
+      tags: [travel]
+      summary: 房东名下所有房间
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BusinessListReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/BusinessListResp' }
+
+  /homestay/guessList:
+    post:
+      tags: [travel]
+      summary: 猜你喜欢
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/EmptyReq' } } }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/HomestayListResp' }
+
+  /homestay/homestayDetail:
+    post:
+      tags: [travel]
+      summary: 民宿详情
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/HomestayDetailReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/HomestayDetailResp' }
+
+  /homestayBussiness/goodBoss:
+    post:
+      tags: [travel]
+      summary: 推荐好房东
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/EmptyReq' } } }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/GoodBossResp' }
+
+  /homestayBussiness/homestayBussinessList:
+    post:
+      tags: [travel]
+      summary: 民宿店铺列表（分页）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/HomestayBussinessListReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/HomestayBussinessListResp' }
+
+  /homestayBussiness/homestayBussinessDetail:
+    post:
+      tags: [travel]
+      summary: 房东详情
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/HomestayBussinessDetailReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/HomestayBussinessDetailResp' }
+
+  /homestayComment/commentList:
+    post:
+      tags: [travel]
+      summary: 民宿评论列表（cursor 分页）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CommentListReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CommentListResp' }
+
+  # ============================================================
+  #  order :1001   (jwt)
+  # ============================================================
+  /homestayOrder/createHomestayOrder:
+    post:
+      tags: [order]
+      summary: 创建民宿订单
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CreateHomestayOrderReq' }
+      responses:
+        '200':
+          description: OK 返回 orderSn
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CreateHomestayOrderResp' }
+
+  /homestayOrder/userHomestayOrderList:
+    post:
+      tags: [order]
+      summary: 我的订单列表
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/UserHomestayOrderListReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/UserHomestayOrderListResp' }
+
+  /homestayOrder/userHomestayOrderDetail:
+    post:
+      tags: [order]
+      summary: 我的订单详情
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/UserHomestayOrderDetailReq' }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/UserHomestayOrderDetailResp' }
+
+  # ============================================================
+  #  payment :1002
+  # ============================================================
+  /thirdPayment/thirdPaymentWxPay:
+    post:
+      tags: [payment]
+      summary: 调起微信支付（H5 内调 wx.chooseWXPay）
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ThirdPaymentWxPayReq' }
+      responses:
+        '200':
+          description: OK 返回微信支付参数
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ThirdPaymentWxPayResp' }
+
+  # 微信回调 API（前端不调用，仅文档留痕）
+  /thirdPayment/thirdPaymentWxPayCallback:
+    post:
+      tags: [payment]
+      summary: 微信支付回调（**微信服务端调用，前端不可达**）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/WxPayCallbackReq' }
+      responses:
+        '200':
+          description: success
+          content:
+            application/xml:
+              schema:
+                type: string
+                example: '<xml><return_code><![CDATA[SUCCESS]]></return_code></xml>'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    # ---- common ----
+    EmptyReq:
+      type: object
+      additionalProperties: false
+      properties: {}
+      example: {}
+
+    CommonError:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 0 # 0 = success
+        msg:
+          type: string
+          example: 'success'
+
+    # ---- usercenter ----
+    RegisterReq:
+      type: object
+      required: [mobile, password, nickname]
+      properties:
+        mobile: { type: string, example: '13800138000' }
+        password: { type: string, example: '********' }
+        nickname: { type: string, example: 'Mikael' }
+        avatar: { type: string, example: 'https://...' }
+
+    RegisterResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                token: { type: string }
+
+    LoginReq:
+      type: object
+      required: [mobile, password]
+      properties:
+        mobile: { type: string }
+        password: { type: string }
+
+    LoginResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                token: { type: string }
+                userId: { type: integer, format: int64 }
+                nickname: { type: string }
+                avatar: { type: string }
+
+    WxMiniAuthReq:
+      type: object
+      required: [code, encryptedData, iv]
+      properties:
+        code: { type: string, description: 'wx.login() 返回的 js_code' }
+        encryptedData:{ type: string }
+        iv: { type: string }
+
+    UserDetailResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                id: { type: integer, format: int64 }
+                mobile: { type: string }
+                nickname: { type: string }
+                avatar: { type: string }
+                info: { type: string, description: '个人简介' }
+
+    # ---- travel / homestay ----
+    Homestay:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        title: { type: string, description: '民宿名' }
+        subTitle: { type: string, description: '副标题' }
+        cover: { type: string, description: '封面' }
+        info: { type: string, description: '简介' }
+        foodInfo: { type: string }
+        foodPrice: { type: number, description: '餐食价（元）' }
+        homestayPrice: { type: number, description: '民宿价（元）' }
+        marketHomestayPrice: { type: number, description: '市场价（元）' }
+        homestayBusinessId: { type: integer, format: int64, description: '所属店铺' }
+        homestayUserId: { type: integer, format: int64, description: '房东 userId' }
+        isFav: { type: integer, description: '0/1 是否收藏（**只读**）' }
+
+    HomestayListReq:
+      type: object
+      required: [page, pageSize]
+      properties:
+        page: { type: integer, default: 1 }
+        pageSize: { type: integer, default: 10 }
+
+    HomestayListResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                list:
+                  type: array
+                  items: { $ref: '#/components/schemas/Homestay' }
+
+    BusinessListReq:
+      type: object
+      required: [lastId, pageSize, homestayBusinessId]
+      properties:
+        lastId: { type: integer, format: int64, default: 0 }
+        pageSize: { type: integer, default: 10 }
+        homestayBusinessId: { type: integer, format: int64 }
+
+    BusinessListResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                list:
+                  type: array
+                  items: { $ref: '#/components/schemas/Homestay' }
+
+    HomestayDetailReq:
+      type: object
+      required: [id]
+      properties:
+        id: { type: integer, format: int64 }
+
+    HomestayDetailResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                homestay: { $ref: '#/components/schemas/Homestay' }
+
+    # ---- travel / homestayBusiness ----
+    HomestayBusinessBoss:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        userId: { type: integer, format: int64 }
+        nickname: { type: string }
+        avatar: { type: string }
+        info: { type: string }
+        rank: { type: integer }
+
+    GoodBossResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                list:
+                  type: array
+                  items: { $ref: '#/components/schemas/HomestayBusinessBoss' }
+
+    HomestayBussinessListReq:
+      type: object
+      required: [lastId, pageSize]
+      properties:
+        lastId: { type: integer, format: int64, default: 0 }
+        pageSize: { type: integer, default: 10 }
+
+    HomestayBussinessListInfo:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        title: { type: string }
+        info: { type: string }
+        tags: { type: string, description: '逗号分隔' }
+        cover: { type: string }
+        star: { type: number }
+        isFav: { type: integer }
+        headerImg: { type: string }
+        sellMonth: { type: integer }
+        personConsume: { type: integer }
+
+    HomestayBussinessListResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                list:
+                  type: array
+                  items: { $ref: '#/components/schemas/HomestayBussinessListInfo' }
+
+    HomestayBussinessDetailReq:
+      type: object
+      required: [id]
+      properties:
+        id: { type: integer, format: int64 }
+
+    HomestayBussinessDetailResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                boss: { $ref: '#/components/schemas/HomestayBusinessBoss' }
+
+    # ---- travel / homestayComment ----
+    HomestayComment:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        homestayId: { type: integer, format: int64 }
+        content: { type: string }
+        star: { type: number }
+        userId: { type: integer, format: int64 }
+        nickname: { type: string }
+        avatar: { type: string }
+
+    CommentListReq:
+      type: object
+      required: [lastId, pageSize]
+      properties:
+        lastId: { type: integer, format: int64, default: 0 }
+        pageSize: { type: integer, default: 10 }
+
+    CommentListResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                list:
+                  type: array
+                  items: { $ref: '#/components/schemas/HomestayComment' }
+
+    # ---- order ----
+    CreateHomestayOrderReq:
+      type: object
+      required: [homestayId, isFood, liveStartTime, liveEndTime, livePeopleNum]
+      properties:
+        homestayId: { type: integer, format: int64 }
+        isFood: { type: boolean }
+        liveStartTime: { type: integer, format: int64, description: 'unix 秒' }
+        liveEndTime: { type: integer, format: int64 }
+        livePeopleNum: { type: integer, format: int64 }
+        remark: { type: string }
+
+    CreateHomestayOrderResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                orderSn: { type: string }
+
+    UserHomestayOrderListView:
+      type: object
+      properties:
+        sn: { type: string }
+        title: { type: string }
+        subTitle: { type: string }
+        homestayId: { type: integer, format: int64 }
+        cover: { type: string }
+        orderTotalPrice: { type: number }
+        createTime: { type: integer, format: int64 }
+        tradeState:
+          type: integer
+          description: |
+            -1 已取消 / 0 待支付 / 1 未使用 / 2 已使用 / 3 已退款 / 4 已过期
+        liveStartDate: { type: integer, format: int64 }
+        liveEndDate: { type: integer, format: int64 }
+        tradeCode: { type: string }
+
+    UserHomestayOrderListReq:
+      type: object
+      required: [lastId, pageSize, tradeState]
+      properties:
+        lastId: { type: integer, format: int64, default: 0 }
+        pageSize: { type: integer, default: 10 }
+        tradeState: { type: integer, default: -99, description: '-99 全部; 0 代支付; 1 有效' }
+
+    UserHomestayOrderListResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                list:
+                  type: array
+                  items: { $ref: '#/components/schemas/UserHomestayOrderListView' }
+
+    UserHomestayOrderDetailReq:
+      type: object
+      required: [sn]
+      properties:
+        sn: { type: string }
+
+    UserHomestayOrderDetailResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                sn: { type: string }
+                userId: { type: integer, format: int64 }
+                homestayId: { type: integer, format: int64 }
+                title: { type: string }
+                subTitle: { type: string }
+                cover: { type: string }
+                info: { type: string }
+                foodInfo: { type: string }
+                foodPrice: { type: number }
+                homestayPrice: { type: number }
+                marketHomestayPrice: { type: number }
+                homestayBusinessId: { type: number }
+                homestayUserId: { type: number }
+                orderTotalPrice: { type: number }
+                createTime: { type: integer, format: int64 }
+                tradeState: { type: integer }
+                liveStartDate: { type: integer, format: int64 }
+                liveEndDate: { type: integer, format: int64 }
+                tradeCode: { type: string }
+                foodTotalPrice: { type: number }
+                homestayTotalPrice: { type: number }
+                remark: { type: string }
+                livePeopleNum: { type: integer, format: int64 }
+                needFood: { type: integer, description: '0 不要 / 1 要' }
+                payTime: { type: integer, format: int64 }
+                payType: { type: string }
+
+    # ---- payment ----
+    ThirdPaymentWxPayReq:
+      type: object
+      required: [orderSn]
+      properties:
+        orderSn: { type: string }
+
+    ThirdPaymentWxPayResp:
+      allOf:
+        - $ref: '#/components/schemas/CommonError'
+        - type: object
+          properties:
+            data:
+              type: object
+              description: '原样转发给 wx.chooseWXPay 的参数'
+              properties:
+                appId: { type: string }
+                timeStamp: { type: string }
+                nonceStr: { type: string }
+                package: { type: string }
+                signType: { type: string }
+                paySign: { type: string }
+
+    WxPayCallbackReq:
+      type: object
+      description: '微信回调 XML（前端不可达）'
+      additionalProperties: true
