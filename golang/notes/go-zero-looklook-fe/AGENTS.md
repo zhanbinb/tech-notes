@@ -25,7 +25,7 @@
 | 类别     | 选型                                                    | 备注                    |
 | -------- | ------------------------------------------------------- | ----------------------- |
 | 语言     | TypeScript ^5.4                                         | `strict: true`          |
-| 框架     | Vue 3.4+ (Composition API + <script setup>)             | 不写 Options API        |
+| 框架     | Vue 3.4+ (Composition API + `<script setup>`)             | 不写 Options API        |
 | 构建     | Vite 5                                                  | dev server 默认 5173    |
 | 路由     | vue-router 4                                            | 文件路由 + 权限守卫     |
 | 状态     | Pinia 2 + pinia-plugin-persistedstate                   |                         |
@@ -94,7 +94,7 @@ src/
 1. 装未在 §2 表里的依赖（除非先开 ADR）
 2. 直接 git push / git reset --hard / rm -rf 任何文件
 3. 创建 .js 副本（项目是纯 TS）
-4. 在 <template> 写复杂逻辑，超过 3 行抽到 <script setup>
+4. 在 `<template>` 写复杂逻辑，超过 3 行抽到 `<script setup>`
 5. 用 localStorage 直接存敏感信息
 6. 跑 dev server 后挂 5 分钟不动
 

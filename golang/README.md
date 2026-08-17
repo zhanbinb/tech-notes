@@ -21,7 +21,6 @@ Go 语言笔记收录地。
   - [01 · go-zero 企业级实战学习路线图](notes/go-zero/01-go-zero-enterprise-learning-roadmap.md)
   - [02 · Etcd 服务发现：原理与 go-zero 实战](notes/go-zero/02-etcd-service-discovery.md)
 - [go-zero-looklook-new · 项目笔记归档（2026 升级版）](notes/go-zero-looklook-new/README.md)
-- [go-zero-looklook-new · 项目笔记归档（2026 升级版）](notes/go-zero-looklook-new/README.md)
   - 22 篇升级 step + 4 篇 support + 15 章官方教程参考，详见子目录 `README.md`
 - [go-zero-looklook-fe · 前端项目归档（Vue 3 + TS）](notes/go-zero-looklook-fe/README.md)
   - 镜像归档：AGENTS.md · ROADMAP.md · PRD.md · dev-backend.md · 7 个 ADR · design tokens · 完整 OpenAPI 契约（713 行）· 3 个 HTML 原型
