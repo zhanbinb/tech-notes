@@ -193,27 +193,40 @@ const INDEX_MD = path.join(REPO_ROOT, "docs", "index.md");
 fs.mkdirSync(path.dirname(INDEX_MD), { recursive: true });
 const INDEX_TEMPLATE = `# Tech Notes
 
-> 学习过程中沉淀的技术笔记仓库，覆盖 Go 后端 / Web3 / 云原生 / 工具排查 等领域。
+> 个人技术学习笔记沉淀仓库，覆盖 Go 后端 / Web3 / 云原生 / DevOps / AI 工具链 等领域。
+> 
+> 写作源（Markdown）即本仓库各分类下的 \`notes/\` 文件，由 [VitePress](https://vitepress.dev/) 渲染发布到 GitHub Pages —— 即 **本博客**。
+> 
+> 📦 **源仓库**：[github.com/zhanbinb/tech-notes](https://github.com/zhanbinb/tech-notes)（⭐ 加星 / Fork 方便回访）
 
 ## 🎯 当前学习重点
 
 - **Go 后端 → Web3 后端**：长期目标，准备 P6/P7 级简历项目
-- **Clean Architecture 实战**：从 go-clean-arch 项目逐层拆解
+- **Clean Architecture 实战**：从 [go-clean-arch](golang/notes/go-clean-arch/) 项目逐层拆解
+- **go-zero 全栈**：[go-zero-looklook-new](golang/notes/go-zero-looklook-new/README.md)（后端）+ [go-zero-looklook-fe](golang/notes/go-zero-looklook-fe/README.md)（前端）一站打通
 - **Codex 工具链**：把 AI 工具真正用成日常生产力
 
 ## 📚 笔记导航
 
 {table}
 
+## ⚙️ 自动部署（写完 push 即更新博客）
+
+- \`git push\` → \`main\` → 触发 [\`.github/workflows/deploy.yml\`](https://github.com/zhanbinb/tech-notes/blob/main/.github/workflows/deploy.yml)
+- 工作流跑 \`scripts/build-sidebar.mjs\` 自动扫描 \`notes/\`，生成 VitePress sidebar + 拷贝到 \`docs/\`
+- 再跑 \`vitepress build\`，产物上传到 GitHub Pages
+- **约 1 分钟内本博客自动更新**
+
 ## ✍️ 写作约定
 
 - 笔记命名：\`NN-<topic>.md\`，两位数序号便于排序
-- 主体中文；关键字、类型名、API 保留英文
-- 一条笔记 = 一个具体知识点，颗粒度适中
+- 一条笔记对应一个具体知识点，颗粒度适中
+- 主体中文；关键字、类型名、API、命令保留英文
+- 项目实战归档例外：单项目笔记达到 20+ 篇时用独立子目录收纳（如 \`go-zero-looklook-new/\`）
 
 ---
 
-> 📦 仓库地址：[github.com/zhanbinb/tech-notes](https://github.com/zhanbinb/tech-notes)
+> 💡 **左下角**可以展开/折叠分类 · 顶部搜索框支持全文 fuzzy 搜索（快捷键 \`K\`）
 `;
 fs.writeFileSync(INDEX_MD, INDEX_TEMPLATE.replace("{table}", buildNavTable(sidebar)), "utf-8");
 console.log(`✓ 生成 ${path.relative(REPO_ROOT, INDEX_MD)}`);
