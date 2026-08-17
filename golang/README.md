@@ -19,7 +19,9 @@ Go 语言笔记收录地。
 ### 项目拆解
 - [go-zero · 企业级微服务项目拆解](notes/go-zero/)
   - [01 · go-zero 企业级实战学习路线图](notes/go-zero/01-go-zero-enterprise-learning-roadmap.md)
-- [02 · Etcd 服务发现：原理与 go-zero 实战](notes/go-zero/02-etcd-service-discovery.md)
+  - [02 · Etcd 服务发现：原理与 go-zero 实战](notes/go-zero/02-etcd-service-discovery.md)
+  - [go-zero-looklook-new · 项目笔记归档（2026 升级版）](notes/go-zero/looklook-new/README.md)
+    - 22 篇升级 step + 4 篇 support + 15 章官方教程参考，详见子目录 `README.md`
 - [go-clean-arch · Clean Architecture 项目拆解](notes/go-clean-arch/)
   - [01 · Echo vs Gin](notes/go-clean-arch/01-echo-vs-gin.md)
   - [02 · main.go 拆解 · Clean Architecture 入口视角](notes/go-clean-arch/02-main-go-clean-arch.md)
@@ -37,3 +39,4 @@ Go 语言笔记收录地。
 - 笔记命名：`NN-<topic>.md`，`NN` 为两位数序号。
 - 一条笔记对应一个具体知识点，主题尽量独立、颗粒度适中。
 - 笔记主体中文；关键字、类型名、API 保留英文。
+- 项目实战归档例外：当一个项目的笔记达到 20+ 篇时，使用子目录收纳（如 `looklook-new/`）。
