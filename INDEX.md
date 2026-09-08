@@ -11,6 +11,7 @@
 - [Docker](docker/README.md)
 - [Etcd](etcd/README.md)
 - [Kubernetes](kubernetes/README.md)
+- [MySQL](mysql/README.md)
 - [Solidity](solidity/README.md)
 - [Python](python/README.md)
 - [Tools](tools/README.md)
@@ -59,6 +60,10 @@ _暂无条目_
 ### Kubernetes · 当前笔记
 - [01 · Kubernetes、云原生与 AWS：从容器部署到 Pod 调度](kubernetes/notes/01-kubernetes-cloud-native-aws-pod-scheduling.md)
 - [02 · 企业级 Docker、Kubernetes 与云服务部署：从代码提交到生产运维](kubernetes/notes/02-enterprise-docker-k8s-cloud-deployment-flow.md)
+
+### MySQL · 当前笔记
+- [01 · MySQL 面试复习指南（架构 · 索引 · 事务 · 锁 · 日志 · 复制）](mysql/notes/01-mysql-interview-study-guide.md)
+  - 7 大主题一站式：SQL 执行流程 · B+Tree 索引与 EXPLAIN · ACID 与 MVCC · 行锁与 Next-Key Lock · redo/undo/binlog 与两阶段提交 · 主从复制与读写分离 · MySQL vs SQL Server 对比
 
 ### Etcd · 当前笔记
 - [01 · Etcd 运维、排错与企业级实践](etcd/notes/01-etcd-ops-and-enterprise-patterns.md)
@@ -141,8 +146,19 @@ _暂无条目_
 - `#delivery-layer` — HTTP / gRPC / CLI 等交付层（Echo handler 等）
 - `#repository-layer` — 数据库接入层、keyset 游标分页、RowsAffected 检查
 - `#database-sql` — 原生 database/sql 用法、SQL 注入防护、`go-sqlmock` 测试
+- `#MySQL` — 架构 · 索引 · 事务 · 锁 · 日志 · 复制 · 性能调优
+- `#InnoDB` — B+Tree 聚簇索引 · Buffer Pool · MVCC · Next-Key Lock · 两阶段提交
+- `#索引` — 最左前缀 · 覆盖索引 · 索引下推 ICP · EXPLAIN · 索引失效场景
+- `#事务` — ACID · 4 隔离级别 · RR vs RC · MVCC 快照读/当前读 · 死锁排查
+- `#主从复制` — binlog · relay log · 异步/半同步/同步 · GTID · 主从延迟
+- `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-08** · 新增 MySQL 笔记：MySQL 面试复习指南（架构 · 索引 · 事务 · 锁 · 日志 · 复制）
+  - 笔记：`mysql/notes/01-mysql-interview-study-guide.md`
+  - 关键价值：把 go-interview-guide/code/04-mysql 的 7 大主题（SQL 执行流程 / B+Tree 索引与 EXPLAIN / ACID 与 MVCC / 行锁与 Next-Key Lock / redo+undo+binlog 与两阶段提交 / 主从复制与读写分离 / MySQL vs SQL Server 对比）一次性提炼成 680 行的中文速记文档，覆盖高频面试题 10 问 + 生产经验 10 坑 + 关键 SQL 速查
+  - 同步操作：新建 `mysql/` 分类（README + notes 子目录），同步更新 INDEX.md 加入 MySQL 入口与 6 个新标签
 
 - **2026-08-17** · 新增 Go 笔记：go-zero-looklook-fe 前端项目归档（Vue 3 + TS 11 阶段路线）
   - 笔记：`golang/notes/go-zero-looklook-fe/README.md`
