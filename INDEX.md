@@ -12,6 +12,7 @@
 - [Etcd](etcd/README.md)
 - [Kubernetes](kubernetes/README.md)
 - [MySQL](mysql/README.md)
+- [Redis](redis/README.md)
 - [Solidity](solidity/README.md)
 - [Python](python/README.md)
 - [Tools](tools/README.md)
@@ -65,6 +66,11 @@ _暂无条目_
 - [01 · MySQL 面试复习指南（架构 · 索引 · 事务 · 锁 · 日志 · 复制）](mysql/notes/01-mysql-interview-study-guide.md)
   - 7 大主题一站式：SQL 执行流程 · B+Tree 索引与 EXPLAIN · ACID 与 MVCC · 行锁与 Next-Key Lock · redo/undo/binlog 与两阶段提交 · 主从复制与读写分离 · MySQL vs SQL Server 对比
 
+### Redis · 当前笔记
+- [01 · Redis 面试复习指南（数据类型 · 底层结构 · 持久化 · 高可用 · 缓存 · 事务 Lua · 内存）](redis/notes/01-redis-interview-study-guide.md)
+  - 7 大主题一站式：5+3 数据类型 + 应用场景 / SDS-dict-quicklist-skiplist-listpack / RDB-AOF-混合 / 主从-Sentinel-Cluster / 三大问题-分布式锁-一致性 / 事务-Lua-Pipeline / 过期策略-8 种淘汰-LRU·LFU
+  - 配套：10 大面试题组速记（Q&A + 49 个必背金句 + 终极 Checklist）
+
 ### Etcd · 当前笔记
 - [01 · Etcd 运维、排错与企业级实践](etcd/notes/01-etcd-ops-and-enterprise-patterns.md)
 
@@ -104,6 +110,9 @@ _暂无条目_
 ### 工具与排查
 - [Chrome 页面图标缺失：系统代理进程崩溃导致 TLS 失败](tools/notes/01-chrome-icons-missing-system-proxy-dead.md)
 
+### Redis 面试复习
+- [Redis 面试复习指南（数据类型 · 底层结构 · 持久化 · 高可用 · 缓存 · 事务 Lua · 内存）](redis/notes/01-redis-interview-study-guide.md) — 7 大主题一站式：5+3 数据类型 / SDS-dict-quicklist-skiplist-listpack / RDB-AOF-混合 / 主从-Sentinel-Cluster / 三大问题-分布式锁-一致性 / 事务-Lua-Pipeline / 过期-8 种淘汰-LRU·LFU；含 10 大题组速记 + 49 个金句
+
 ### 路线图阶段对应
 | 阶段 | 主题 | 重点项目 | 笔记 |
 | --- | --- | --- | --- |
@@ -123,6 +132,8 @@ _暂无条目_
 - `#go-zero` — API / zRPC / goctl / 服务治理 / 企业级实战
 - `#云原生` — K8s / Docker / Prometheus / etcd
 - `#存储` — MinIO
+- `#Redis` — 数据类型 / SDS / skiplist / RDB / AOF / 哨兵 / Cluster / 分布式锁
+- `#缓存` — 三大问题 / Cache Aside / Canal binlog
 - `#消息队列` — go-nsq / Kafka / RocketMQ
 - `#Web3` — go-ethereum / Chainlink / Cosmos SDK
 - `#业务系统` — Gitea / Grafana / Harbor / gin-vue-admin / ferry / mall-go / KamaChat
@@ -154,6 +165,13 @@ _暂无条目_
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-08** · 新增 Redis 分类 + 面试复习指南笔记（7 大主题 + 10 大题组速记）
+  - 分类：`redis/`（新建）
+  - 笔记：`redis/notes/01-redis-interview-study-guide.md`（24KB / 551 行 / 16 个代码块）
+  - 关键价值：把 `go-interview-guide/code/05-redis` 7 个子章节 + 10 大面试题组 49 个金句沉淀成"面试前 30 分钟速记"的一站式文档
+  - 与 MySQL 笔记对位（同样是 7 大主题一站式），后续可对照查阅缓存层与 DB 层的取舍
+
 
 - **2026-09-08** · 新增 MySQL 笔记：MySQL 面试复习指南（架构 · 索引 · 事务 · 锁 · 日志 · 复制）
   - 笔记：`mysql/notes/01-mysql-interview-study-guide.md`
