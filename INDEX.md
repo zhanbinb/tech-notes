@@ -18,7 +18,7 @@
 - [Tools](tools/README.md)
 
 ### AI · 当前笔记
-_暂无条目_
+- [01 · Agent 开发工程师学习路线：从 ReAct 到完整 Runtime（Go 实现 · 9 步）](AI/notes/01-agent-dev-learning-roadmap.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -165,6 +165,12 @@ _暂无条目_
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-15** · 新增 AI 分类 + Agent 开发工程师学习路线笔记（Go 实现 · 9 步路线）
+  - 分类：`AI/`（新建 notes/ 子目录）
+  - 笔记：`AI/notes/01-agent-dev-learning-roadmap.md`（260 行）
+  - 关键价值：把 go-interview-guide/code/06-agent/go-agent-demo 的 9 大模块（LLM/Tool/Loop/Context/Workflow/Memory/RAG/Embedding/MCP/Router）提炼成可对照 LangGraph 学习的速查路线，含 12 题面试自检 + 7 个常见坑提醒
+  - 学习状态：自评核心概念 75-80%、动手能力 80-85%、框架熟悉度 15-20%（下一步补 LangGraph / LangChain）
 
 - **2026-09-08** · 新增 Redis 分类 + 面试复习指南笔记（7 大主题 + 10 大题组速记）
   - 分类：`redis/`（新建）
