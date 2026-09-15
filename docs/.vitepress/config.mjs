@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import './style.css'
 import { generatedSidebar } from './sidebar.generated.mjs'
 
 export default defineConfig({
