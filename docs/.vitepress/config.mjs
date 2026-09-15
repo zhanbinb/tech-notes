@@ -26,37 +26,52 @@ export default defineConfig({
       p, blockquote, ul, ol { margin-top: 0.6rem !important; margin-bottom: 0.6rem !important; }
       hr { margin: 1rem 0 !important; }
 
-      /* === 左侧导航栏压缩间距 === */
-      /* 整侧边栏的内边距 */
-      .VPSidebar { padding: 12px 6px !important; }
-      /* 顶层分类标题（如 "Go 后端学习路线"）*/
-      .VPSidebarItem.level-0,
-      .VPSidebarGroup > .VPSidebarItem.level-1 {
-        padding: 6px 10px 4px !important;
-        line-height: 1.3 !important;
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        letter-spacing: 0 !important;
-      }
-      /* 具体笔记链接项 */
-      .VPSidebarItem.level-2,
-      .VPSidebarItem.level-3 {
-        padding: 3px 10px 3px 14px !important;
+      /* === 左侧导航栏压缩间距（深度覆盖） === */
+      .VPSidebar { padding: 8px 4px !important; }
+      .VPSidebarItem {
+        padding: 2px 10px !important;
+        margin: 0 !important;
         line-height: 1.35 !important;
         font-size: 13px !important;
       }
-      /* 子分组（如 go-clean-arch 项目拆解）*/
+      .VPSidebarItem.level-1,
+      .VPSidebarItem.level-2,
+      .VPSidebarItem.level-3,
+      .VPSidebarItem.level-0 {
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+      }
+      /* 顶级分类标题加粗 */
+      .VPSidebarItem.level-1 > .VPSidebarItem.level-1,
+      .VPSidebarGroup > .VPSidebarItem {
+        font-weight: 600 !important;
+        padding-top: 6px !important;
+        padding-bottom: 4px !important;
+      }
+      /* 子分组标题（如 go-clean-arch）*/
       .VPSidebarGroup .VPSidebarGroup .VPSidebarItem.level-1 {
-        padding: 4px 10px 2px !important;
         font-size: 12px !important;
         font-weight: 500 !important;
         color: var(--vp-c-text-2);
       }
-      /* 折叠箭头按钮缩小 */
-      .VPSidebarItem .VPSidebarItem.collapsible .VPSidebarItem .arrow,
-      button.VPSidebarItem .arrow { width: 12px !important; }
-      /* 链接 hover/focus 不抢眼 */
-      .VPSidebarItem.is-active { font-weight: 600 !important; }
+      /* 侧边栏内 ul 之间间距 */
+      .VPSidebar .group + .group,
+      .VPSidebar ul + ul { margin-top: 0 !important; }
+
+      /* === 右侧目录（TOC/Outline）压缩间距 === */
+      .VPDocOutline,
+      .VPOOutline { padding-top: 4px !important; }
+      .VPDoc .outline-link,
+      .vp-toc-link,
+      a.outline-link {
+        padding: 2px 0 2px 14px !important;
+        margin: 0 !important;
+        line-height: 1.4 !important;
+        font-size: 13px !important;
+      }
+      .outline-link:hover { color: var(--vp-c-brand-1) !important; }
+      /* TOC 缩进层级 */
+      .VPDoc .outline-links { padding-left: 0 !important; }
     `]
   ],
 
