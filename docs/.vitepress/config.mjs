@@ -14,8 +14,6 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'theme-color', content: '#3b82f6' }],
-    // 自定义 CSS：docs/public/custom.css 通过此 link 加载
-    ['link', { rel: 'stylesheet', href: '/tech-notes/custom.css' }],
   ],
 
   themeConfig: {
