@@ -150,7 +150,7 @@ json.Unmarshal([]byte(content), &result)
 ```
 
 **为什么要两层清洗？**
-- 推理类模型（DeepSeek-R1、MiniMax thinking mode）会输出 `<think>...</think>`
+- 推理类模型（DeepSeek-R1、MiniMax thinking mode）会输出 `&lt;think&gt;...&lt;/think&gt;`
 - 一些 LLM 会用 ` ```json ... ``` ` 包 JSON
 - 不清洗直接解析 → 失败
 

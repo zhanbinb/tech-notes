@@ -129,7 +129,7 @@
 | **MCP Client** | 官方 SDK MCP Client | `mcp/client/client.go` |
 | **MCP Tool Converter** | MCP Tool → LLM Tool | `mcp/client/tools.go` |
 | **Agent Loop** | 整合所有模块的循环 | `agent/agent.go` |
-| **Output Parser** | 清理 LLM 输出（<think> / Markdown）| `llm/output.go` |
+| **Output Parser** | 清理 LLM 输出（&lt;think&gt; / Markdown）| `llm/output.go` |
 
 ---
 

@@ -245,7 +245,7 @@ func ConvertTools(mcpTools []*mcp.Tool) []openai.ChatCompletionToolParam
 3. **Router 输出必须是 boolean 字段** → 不能是自由文本
 4. **Router 必须在 Agent Loop 外** → 每轮重新决策是浪费
 5. **MCP Tool 必须转成 LLM Function 格式** → LLM 不认识 MCP 协议
-6. **JSON 解析前必须清理 `<think>` 和 Markdown fence** → 推理模型输出污染
+6. **JSON 解析前必须清理 `&lt;think&gt;` 和 Markdown fence** → 推理模型输出污染
 7. **Fake Embedding 不具备语义检索能力** → 生产必须换 OpenAI/BGE
 
 ## 相关资源

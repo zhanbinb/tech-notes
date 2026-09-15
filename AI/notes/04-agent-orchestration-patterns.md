@@ -235,7 +235,7 @@ if classification != "order_analysis" {
 }
 ```
 
-**为什么需要处理 <think> 标签？**
+**为什么需要处理 &lt;think&gt; 标签？**
 - 推理类模型（如 DeepSeek-R1、MiniMax-M3 thinking mode）会在 answer 之前输出推理过程
 - 这些推理过程不应该出现在分类结果里
 - **这是真实项目中的常见坑**
@@ -391,7 +391,7 @@ RunAgenticWorkflow
 - [ ] 1. 三种 Workflow 模式各自由谁决策？
 - [ ] 2. 为什么 LLM 决策 + 代码执行 是最常见的组合？
 - [ ] 3. `RunAgenticWorkflow` 三个阶段分别是什么？
-- [ ] 4. 为什么要处理 <think> 标签？
+- [ ] 4. 为什么要处理 &lt;think&gt; 标签？
 - [ ] 5. 跟 Anthropic 的 5 种模式怎么对应？
 
 ---

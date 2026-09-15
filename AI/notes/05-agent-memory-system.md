@@ -365,7 +365,7 @@ func (e *FakeEmbedder) Embed(text string) ([]float64, error) {
 
 ### 局限 4：Output Parser 脆弱
 
-LLM 返回的 JSON 偶尔带 `<think>` 标签、Markdown code fence。
+LLM 返回的 JSON 偶尔带 `&lt;think&gt;` 标签、Markdown code fence。
 
 ```go
 // llm/output.go CleanThinking 处理 <think> 标签
