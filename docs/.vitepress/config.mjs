@@ -14,63 +14,8 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'theme-color', content: '#3b82f6' }],
-      :root {
-        --vp-heading-margin-top: 12px !important;
-        --vp-heading-margin-bottom: 8px !important;
-      }
-      h1 { margin-top: 0 !important; padding-bottom: 0.5rem !important; }
-      h2 { margin-top: 1.5rem !important; padding-top: 0.5rem !important; }
-      h3 { margin-top: 1rem !important; }
-      p, blockquote, ul, ol { margin-top: 0.6rem !important; margin-bottom: 0.6rem !important; }
-      hr { margin: 1rem 0 !important; }
-
-      /* === 左侧导航栏压缩间距（深度覆盖） === */
-      .VPSidebar { padding: 8px 4px !important; }
-      .VPSidebarItem {
-        padding: 2px 10px !important;
-        margin: 0 !important;
-        line-height: 1.35 !important;
-        font-size: 13px !important;
-      }
-      .VPSidebarItem.level-1,
-      .VPSidebarItem.level-2,
-      .VPSidebarItem.level-3,
-      .VPSidebarItem.level-0 {
-        padding-top: 3px !important;
-        padding-bottom: 3px !important;
-      }
-      /* 顶级分类标题加粗 */
-      .VPSidebarItem.level-1 > .VPSidebarItem.level-1,
-      .VPSidebarGroup > .VPSidebarItem {
-        font-weight: 600 !important;
-        padding-top: 6px !important;
-        padding-bottom: 4px !important;
-      }
-      /* 子分组标题（如 go-clean-arch）*/
-      .VPSidebarGroup .VPSidebarGroup .VPSidebarItem.level-1 {
-        font-size: 12px !important;
-        font-weight: 500 !important;
-        color: var(--vp-c-text-2);
-      }
-      /* 侧边栏内 ul 之间间距 */
-      .VPSidebar .group + .group,
-      .VPSidebar ul + ul { margin-top: 0 !important; }
-
-      /* === 右侧目录（TOC/Outline）压缩间距 === */
-      .VPDocOutline,
-      .VPOOutline { padding-top: 4px !important; }
-      .VPDoc .outline-link,
-      .vp-toc-link,
-      a.outline-link {
-        padding: 2px 0 2px 14px !important;
-        margin: 0 !important;
-        line-height: 1.4 !important;
-        font-size: 13px !important;
-      }
-      .outline-link:hover { color: var(--vp-c-brand-1) !important; }
-      /* TOC 缩进层级 */
-      .VPDoc .outline-links { padding-left: 0 !important; }
-    `]
+    // 自定义 CSS：docs/public/custom.css 通过此 link 加载
+    ['link', { rel: 'stylesheet', href: '/custom.css' }],
   ],
 
   themeConfig: {
