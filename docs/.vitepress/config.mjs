@@ -14,8 +14,6 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'theme-color', content: '#3b82f6' }],
-    // 压缩 heading 上下间距，让页面更紧凑
-    ['style', {}, `
       :root {
         --vp-heading-margin-top: 12px !important;
         --vp-heading-margin-bottom: 8px !important;
