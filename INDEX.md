@@ -18,7 +18,16 @@
 - [Tools](tools/README.md)
 
 ### AI · 当前笔记
-- [01 · Agent 开发工程师学习路线：从 ReAct 到完整 Runtime（Go 实现 · 9 步）](AI/notes/01-agent-dev-learning-roadmap.md)
+- [01 · Agent 开发工程师学习路线：从 ReAct 到完整 Runtime（Go 实现 · 9 步）](AI/notes/01-agent-dev-learning-roadmap.md) — 12 步路线 + 面试自检
+- [02 · Agent 架构总览：Router + 3 大支柱 + Harness 视角](AI/notes/02-agent-architecture-overview.md) — 全景图
+- [03 · Context Management：消息历史 + 摘要压缩](AI/notes/03-agent-context-management.md)
+- [04 · Agent 编排模式：Fixed / Conditional / Agentic](AI/notes/04-agent-orchestration-patterns.md)
+- [05 · Memory 完整体系：Extraction + Hybrid Search + Retrieval](AI/notes/05-agent-memory-system.md)
+- [06 · Query Rewrite：自然语言到检索关键词](AI/notes/06-agent-query-rewrite.md)
+- [07 · Embedding & 向量检索：数学基础 + Fake Embedder](AI/notes/07-embedding-and-vector-search.md)
+- [08 · RAG 完整链路：KnowledgeBase + Retriever + Ask](AI/notes/08-rag-pipeline.md)
+- [09 · Router 能力路由：按需启用 Memory/RAG/Tools](AI/notes/09-router-capability-routing.md)
+- [10 · MCP 详解：协议 + Server + Client + Tool Schema 转换](AI/notes/10-mcp-model-context-protocol.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -165,6 +174,12 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-15** · 批量新增 AI 笔记 9 篇：Agent 完整体系（Context / Orchestration / Memory / Query Rewrite / Embedding / RAG / Router / MCP / Architecture）
+  - 笔记：`AI/notes/02-agent-architecture-overview.md` ~ `10-mcp-model-context-protocol.md`（共 3477 行 / 106KB）
+  - 同步上一条 `01-agent-dev-learning-roadmap.md` 形成完整的 Agent 开发知识库（10 篇 · 3737 行 / 117KB）
+  - 来源：`go-interview-guide/docs/agent-learning/notes/` 项目内笔记，已修正跨笔记链接 + 移除失效的项目相对路径
+  - 阅读建议：先读 02（架构总览），然后按 03→10 顺序读；01 是元信息（路线+自检），可单独看
 
 - **2026-09-15** · 新增 AI 分类 + Agent 开发工程师学习路线笔记（Go 实现 · 9 步路线）
   - 分类：`AI/`（新建 notes/ 子目录）
