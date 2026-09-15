@@ -25,6 +25,38 @@ export default defineConfig({
       h3 { margin-top: 1rem !important; }
       p, blockquote, ul, ol { margin-top: 0.6rem !important; margin-bottom: 0.6rem !important; }
       hr { margin: 1rem 0 !important; }
+
+      /* === 左侧导航栏压缩间距 === */
+      /* 整侧边栏的内边距 */
+      .VPSidebar { padding: 12px 6px !important; }
+      /* 顶层分类标题（如 "Go 后端学习路线"）*/
+      .VPSidebarItem.level-0,
+      .VPSidebarGroup > .VPSidebarItem.level-1 {
+        padding: 6px 10px 4px !important;
+        line-height: 1.3 !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0 !important;
+      }
+      /* 具体笔记链接项 */
+      .VPSidebarItem.level-2,
+      .VPSidebarItem.level-3 {
+        padding: 3px 10px 3px 14px !important;
+        line-height: 1.35 !important;
+        font-size: 13px !important;
+      }
+      /* 子分组（如 go-clean-arch 项目拆解）*/
+      .VPSidebarGroup .VPSidebarGroup .VPSidebarItem.level-1 {
+        padding: 4px 10px 2px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        color: var(--vp-c-text-2);
+      }
+      /* 折叠箭头按钮缩小 */
+      .VPSidebarItem .VPSidebarItem.collapsible .VPSidebarItem .arrow,
+      button.VPSidebarItem .arrow { width: 12px !important; }
+      /* 链接 hover/focus 不抢眼 */
+      .VPSidebarItem.is-active { font-weight: 600 !important; }
     `]
   ],
 
