@@ -1,5 +1,5 @@
 /* ============================================
-   Tech Notes 自定义样式（v5：品牌区 + nav 区分隔）
+   Tech Notes 自定义样式（v6：顶部留白强化）
    ============================================ */
 
 /* === 顶部页面 === */
@@ -13,26 +13,32 @@ h3 { margin-top: 1rem !important; }
 p, blockquote, ul, ol { margin-top: 0.6rem !important; margin-bottom: 0.6rem !important; }
 hr { margin: 1rem 0 !important; }
 
-/* === 左侧导航栏 === */
+/* === 左侧导航栏：顶部 32px 隐形占位（确保不贴顶） === */
 .VPSidebar {
-  padding: 0 !important;
-  /* 整个 sidebar 不设 padding，让 brand 和 nav 自己管 */
+  padding: 0 6px !important;
+}
+.VPSidebar::before {
+  content: "" !important;
+  display: block !important;
+  height: 40px !important;  /* 顶部强制留 40px 空白 */
+  width: 100% !important;
 }
 
-/* === 品牌区（"Tech Notes"）：顶部 + 底部都有大留白 === */
+/* === 品牌区（"Tech Notes"）：更大留白 + 底部分隔 === */
 .VPSidebarBrand,
 .VPSidebar .VPSidebarBrand,
 a.title {
   display: block !important;
-  padding: 20px 20px 16px !important;
+  padding: 8px 20px 16px !important;
   margin: 0 !important;
   font-size: 17px !important;
   font-weight: 600 !important;
   color: var(--vp-c-text-1) !important;
   border-bottom: 1px solid var(--vp-c-divider) !important;
+  line-height: 1.4 !important;
 }
 
-/* === nav 区域：跟品牌区明显隔开 === */
+/* === nav 区域：跟品牌区分隔 === */
 .VPSidebarNav,
 nav.VPSidebarNav,
 .VPSidebar .VPSidebarNav {
@@ -53,7 +59,6 @@ nav.VPSidebarNav,
   min-height: 0 !important;
 }
 
-/* 所有 sidebar 文字统一 14px */
 .VPSidebarItem .text,
 .VPSidebarItem p,
 .VPSidebarItem .link,
@@ -67,7 +72,7 @@ nav.VPSidebarNav,
   color: var(--vp-c-text-1) !important;
 }
 
-/* === 顶级分类（level-1） === */
+/* 顶级分类 */
 .VPSidebarItem.level-1 {
   padding: 8px 8px 4px !important;
 }
@@ -78,7 +83,7 @@ nav.VPSidebarNav,
   color: var(--vp-c-text-1) !important;
 }
 
-/* === 笔记链接（level-2/3） === */
+/* 笔记链接 */
 .VPSidebarItem.level-2,
 .VPSidebarItem.level-3 {
   padding: 8px 8px 8px 16px !important;
@@ -96,7 +101,7 @@ nav.VPSidebarNav,
   font-weight: 600 !important;
 }
 
-/* === 嵌套子分组标题 === */
+/* 嵌套子分组 */
 .VPSidebarItem.level-1 .VPSidebarItem.level-1,
 .VPSidebarItem.level-1 .group .VPSidebarItem.level-1 {
   padding: 8px 8px 2px !important;
@@ -108,7 +113,7 @@ nav.VPSidebarNav,
   color: var(--vp-c-text-2) !important;
 }
 
-/* group 之间 === */
+/* group 之间 */
 .VPSidebar .group,
 .VPSidebar ul,
 .VPSidebar nav,
