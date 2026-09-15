@@ -191,44 +191,65 @@ console.log(`  子分组笔记: ${subCount} 篇`);
 // === 同步生成 docs/index.md（完全覆盖，不依赖模板存在） ===
 const INDEX_MD = path.join(REPO_ROOT, "docs", "index.md");
 fs.mkdirSync(path.dirname(INDEX_MD), { recursive: true });
+
+// 推荐起点（手动维护，可随时改）
+const FEATURED = [
+  { title: "Go 后端学习路线图（融合版）", desc: "8 阶段 · 20/30/35/15 时间分配", link: "/golang/01-go-backend-roadmap" },
+  { title: "Agent 开发工程师学习路线", desc: "Go 实现 · 9 步 · 10 篇深度拆解", link: "/AI/01-agent-dev-learning-roadmap" },
+  { title: "Tech Notes 博客自动部署工作流", desc: "VitePress + GitHub Actions", link: "/github/01-tech-notes-blog-auto-deploy" },
+];
+
 const INDEX_TEMPLATE = `# Tech Notes
 
-> 个人技术学习笔记沉淀仓库，覆盖 Go 后端 / Web3 / 云原生 / DevOps / AI 工具链 等领域。
-> 
-> 写作源（Markdown）即本仓库各分类下的 \`notes/\` 文件，由 [VitePress](https://vitepress.dev/) 渲染发布到 GitHub Pages —— 即 **本博客**。
-> 
-> 📦 **源仓库**：[github.com/zhanbinb/tech-notes](https://github.com/zhanbinb/tech-notes)（⭐ 加星 / Fork 方便回访）
+> 个人技术学习笔记沉淀仓库 · 自动部署到 GitHub Pages
 
-## 🎯 当前学习重点
+## 🚀 推荐起点
 
-- **Go 后端 → Web3 后端**：长期目标，准备 P6/P7 级简历项目
-- **Clean Architecture 实战**：从 [go-clean-arch](golang/notes/go-clean-arch/) 项目逐层拆解
-- **go-zero 全栈**：[go-zero-looklook-new](golang/notes/go-zero-looklook-new/README.md)（后端）+ [go-zero-looklook-fe](golang/notes/go-zero-looklook-fe/README.md)（前端）一站打通
-- **Codex 工具链**：把 AI 工具真正用成日常生产力
+{featuredCards}
+
+## 🎯 4 大学习方向
+
+- 🚀 **Go 后端 → Web3 后端**：P6/P7 长期目标，含 Clean Architecture / go-zero / etcd 分布式
+- 🤖 **AI Agent 工程化**：完整 10 篇拆解，从 ReAct 到完整 Runtime
+- ⚙️ **分布式 + 云原生**：etcd / K8s / Docker / Prometheus 实战
+- 📚 **面试速记体系**：MySQL / Redis / K8s 一站式速记
+
+## 📊 数据快览
+
+| 指标 | 数值 |
+| --- | --- |
+| 分类数 | {categories} |
+| 笔记总数 | {totalNotes} |
+| 自动部署 | push 即更新（~1 分钟） |
 
 ## 📚 笔记导航
 
 {table}
 
-## ⚙️ 自动部署（写完 push 即更新博客）
+## ⚙️ 自动部署
 
-- \`git push\` → \`main\` → 触发 [\`.github/workflows/deploy.yml\`](https://github.com/zhanbinb/tech-notes/blob/main/.github/workflows/deploy.yml)
-- 工作流跑 \`scripts/build-sidebar.mjs\` 自动扫描 \`notes/\`，生成 VitePress sidebar + 拷贝到 \`docs/\`
-- 再跑 \`vitepress build\`，产物上传到 GitHub Pages
-- **约 1 分钟内本博客自动更新**
+\`git push\` → GitHub Actions → [VitePress](https://vitepress.dev/) build → GitHub Pages（约 1 分钟全流程）
 
 ## ✍️ 写作约定
 
 - 笔记命名：\`NN-<topic>.md\`，两位数序号便于排序
 - 一条笔记对应一个具体知识点，颗粒度适中
 - 主体中文；关键字、类型名、API、命令保留英文
-- 项目实战归档例外：单项目笔记达到 20+ 篇时用独立子目录收纳（如 \`go-zero-looklook-new/\`）
+- 项目实战达到 20+ 篇时用独立子目录收纳
 
 ---
 
-> 💡 **左下角**可以展开/折叠分类 · 顶部搜索框支持全文 fuzzy 搜索（快捷键 \`K\`）
+> 💡 **左下角**可展开/折叠分类 · 顶部搜索框支持全文 fuzzy 搜索（快捷键 \`K\`）
 `;
-fs.writeFileSync(INDEX_MD, INDEX_TEMPLATE.replace("{table}", buildNavTable(sidebar)), "utf-8");
+
+const featuredCards = FEATURED.map(f => `- [${f.title}](${f.link}) — *${f.desc}*`).join("\n");
+const stats = { categories: categories.length, totalNotes: topCount + subCount };
+const content = INDEX_TEMPLATE
+  .replace("{table}", buildNavTable(sidebar))
+  .replace("{featuredCards}", featuredCards)
+  .replace("{categories}", String(stats.categories))
+  .replace("{totalNotes}", String(stats.totalNotes));
+fs.writeFileSync(INDEX_MD, content, "utf-8");
 console.log(`✓ 生成 ${path.relative(REPO_ROOT, INDEX_MD)}`);
 
 function buildNavTable(sidebarObj) {
