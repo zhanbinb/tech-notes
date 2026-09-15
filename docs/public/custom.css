@@ -1,5 +1,5 @@
 /* ============================================
-   Tech Notes 自定义样式（v4：呼吸感 + 视觉舒适）
+   Tech Notes 自定义样式（v5：品牌区 + nav 区分隔）
    ============================================ */
 
 /* === 顶部页面 === */
@@ -15,14 +15,29 @@ hr { margin: 1rem 0 !important; }
 
 /* === 左侧导航栏 === */
 .VPSidebar {
-  padding: 12px 6px !important;
+  padding: 0 !important;
+  /* 整个 sidebar 不设 padding，让 brand 和 nav 自己管 */
 }
 
-/* 让 nav 跟 "Tech Notes" 品牌名之间留出空间 */
+/* === 品牌区（"Tech Notes"）：顶部 + 底部都有大留白 === */
+.VPSidebarBrand,
+.VPSidebar .VPSidebarBrand,
+a.title {
+  display: block !important;
+  padding: 20px 20px 16px !important;
+  margin: 0 !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
+/* === nav 区域：跟品牌区明显隔开 === */
 .VPSidebarNav,
 nav.VPSidebarNav,
 .VPSidebar .VPSidebarNav {
-  padding-top: 16px !important;
+  padding: 16px 8px 24px !important;
+  margin: 0 !important;
 }
 
 .VPSidebar *,
@@ -38,7 +53,7 @@ nav.VPSidebarNav,
   min-height: 0 !important;
 }
 
-/* 所有 sidebar 文字统一 14px，颜色温和一点（不要纯黑）*/
+/* 所有 sidebar 文字统一 14px */
 .VPSidebarItem .text,
 .VPSidebarItem p,
 .VPSidebarItem .link,
@@ -52,9 +67,9 @@ nav.VPSidebarNav,
   color: var(--vp-c-text-1) !important;
 }
 
-/* === 顶级分类（level-1）：中等字重（不黑） === */
+/* === 顶级分类（level-1） === */
 .VPSidebarItem.level-1 {
-  padding: 10px 8px 4px !important;
+  padding: 8px 8px 4px !important;
 }
 .VPSidebarItem.level-1 .text,
 .VPSidebarItem.level-1 .VPLink {
@@ -63,7 +78,7 @@ nav.VPSidebarNav,
   color: var(--vp-c-text-1) !important;
 }
 
-/* === 笔记链接（level-2/3）：加大 padding 让项间距明显 === */
+/* === 笔记链接（level-2/3） === */
 .VPSidebarItem.level-2,
 .VPSidebarItem.level-3 {
   padding: 8px 8px 8px 16px !important;
