@@ -1,5 +1,5 @@
 /* ============================================
-   Tech Notes 自定义样式（v3：紧凑但有呼吸）
+   Tech Notes 自定义样式（v4：呼吸感 + 视觉舒适）
    ============================================ */
 
 /* === 顶部页面 === */
@@ -13,9 +13,16 @@ h3 { margin-top: 1rem !important; }
 p, blockquote, ul, ol { margin-top: 0.6rem !important; margin-bottom: 0.6rem !important; }
 hr { margin: 1rem 0 !important; }
 
-/* === 左侧导航栏：舒适间距 === */
+/* === 左侧导航栏 === */
 .VPSidebar {
   padding: 12px 6px !important;
+}
+
+/* 让 nav 跟 "Tech Notes" 品牌名之间留出空间 */
+.VPSidebarNav,
+nav.VPSidebarNav,
+.VPSidebar .VPSidebarNav {
+  padding-top: 16px !important;
 }
 
 .VPSidebar *,
@@ -31,7 +38,7 @@ hr { margin: 1rem 0 !important; }
   min-height: 0 !important;
 }
 
-/* 所有 sidebar 文字统一 14px */
+/* 所有 sidebar 文字统一 14px，颜色温和一点（不要纯黑）*/
 .VPSidebarItem .text,
 .VPSidebarItem p,
 .VPSidebarItem .link,
@@ -41,29 +48,43 @@ hr { margin: 1rem 0 !important; }
   margin: 0 !important;
   line-height: 1.4 !important;
   font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--vp-c-text-1) !important;
 }
 
-/* === 顶级分类（level-1）：适度间距 + 加粗 === */
+/* === 顶级分类（level-1）：中等字重（不黑） === */
 .VPSidebarItem.level-1 {
-  padding: 8px 8px 4px !important;
+  padding: 10px 8px 4px !important;
 }
 .VPSidebarItem.level-1 .text,
 .VPSidebarItem.level-1 .VPLink {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   font-size: 14px !important;
   color: var(--vp-c-text-1) !important;
 }
 
-/* === 笔记链接（level-2/3）：均匀小间距 === */
+/* === 笔记链接（level-2/3）：加大 padding 让项间距明显 === */
 .VPSidebarItem.level-2,
 .VPSidebarItem.level-3 {
-  padding: 5px 8px 5px 16px !important;
+  padding: 8px 8px 8px 16px !important;
+}
+.VPSidebarItem.level-2 .text,
+.VPSidebarItem.level-3 .text {
+  font-weight: 400 !important;
+  color: var(--vp-c-text-2) !important;
+}
+.VPSidebarItem.level-2.is-active .text,
+.VPSidebarItem.level-3.is-active .text,
+.VPSidebarItem.level-2.is-active a,
+.VPSidebarItem.level-3.is-active a {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
 }
 
 /* === 嵌套子分组标题 === */
 .VPSidebarItem.level-1 .VPSidebarItem.level-1,
 .VPSidebarItem.level-1 .group .VPSidebarItem.level-1 {
-  padding: 6px 8px 2px !important;
+  padding: 8px 8px 2px !important;
 }
 .VPSidebarItem.level-1 .VPSidebarItem.level-1 .text,
 .VPSidebarItem.level-1 .group .VPSidebarItem.level-1 .text {
@@ -93,8 +114,13 @@ nav.VPDocOutline {
 .outline-link,
 a.outline-link,
 .vp-toc-link {
-  padding: 3px 0 3px 14px !important;
+  padding: 4px 0 4px 14px !important;
   margin: 0 !important;
   line-height: 1.4 !important;
   font-size: 13px !important;
+  color: var(--vp-c-text-2) !important;
+}
+.outline-link.active {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
 }
