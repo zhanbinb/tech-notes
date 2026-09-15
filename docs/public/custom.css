@@ -1,6 +1,5 @@
 /* ============================================
-   Tech Notes 自定义样式
-   通过 docs/public/custom.css 静态加载
+   Tech Notes 自定义样式（v3：紧凑但有呼吸）
    ============================================ */
 
 /* === 顶部页面 === */
@@ -14,12 +13,11 @@ h3 { margin-top: 1rem !important; }
 p, blockquote, ul, ol { margin-top: 0.6rem !important; margin-bottom: 0.6rem !important; }
 hr { margin: 1rem 0 !important; }
 
-/* === 左侧导航栏：紧凑 + 大字号 === */
+/* === 左侧导航栏：舒适间距 === */
 .VPSidebar {
-  padding: 8px 4px !important;
+  padding: 12px 6px !important;
 }
 
-/* 重置所有 sidebar 子元素的 padding/margin */
 .VPSidebar *,
 .VPSidebar *::before,
 .VPSidebar *::after {
@@ -33,7 +31,7 @@ hr { margin: 1rem 0 !important; }
   min-height: 0 !important;
 }
 
-/* 所有 sidebar 文字统一 14px，不分 level */
+/* 所有 sidebar 文字统一 14px */
 .VPSidebarItem .text,
 .VPSidebarItem p,
 .VPSidebarItem .link,
@@ -45,9 +43,9 @@ hr { margin: 1rem 0 !important; }
   font-size: 14px !important;
 }
 
-/* 分类标题（level-1）：加粗 + 微大间距 */
+/* === 顶级分类（level-1）：适度间距 + 加粗 === */
 .VPSidebarItem.level-1 {
-  padding: 6px 8px 2px !important;
+  padding: 8px 8px 4px !important;
 }
 .VPSidebarItem.level-1 .text,
 .VPSidebarItem.level-1 .VPLink {
@@ -56,10 +54,16 @@ hr { margin: 1rem 0 !important; }
   color: var(--vp-c-text-1) !important;
 }
 
-/* 子分组标题（嵌套 level-1）：颜色淡一点 */
+/* === 笔记链接（level-2/3）：均匀小间距 === */
+.VPSidebarItem.level-2,
+.VPSidebarItem.level-3 {
+  padding: 5px 8px 5px 16px !important;
+}
+
+/* === 嵌套子分组标题 === */
 .VPSidebarItem.level-1 .VPSidebarItem.level-1,
 .VPSidebarItem.level-1 .group .VPSidebarItem.level-1 {
-  padding: 4px 8px 0 !important;
+  padding: 6px 8px 2px !important;
 }
 .VPSidebarItem.level-1 .VPSidebarItem.level-1 .text,
 .VPSidebarItem.level-1 .group .VPSidebarItem.level-1 .text {
@@ -68,12 +72,7 @@ hr { margin: 1rem 0 !important; }
   color: var(--vp-c-text-2) !important;
 }
 
-/* 笔记链接（level-2/3）：紧凑 padding */
-.VPSidebarItem.level-2,
-.VPSidebarItem.level-3 {
-  padding: 1px 8px 1px 14px !important;
-}
-
+/* group 之间 === */
 .VPSidebar .group,
 .VPSidebar ul,
 .VPSidebar nav,
@@ -94,7 +93,7 @@ nav.VPDocOutline {
 .outline-link,
 a.outline-link,
 .vp-toc-link {
-  padding: 2px 0 2px 14px !important;
+  padding: 3px 0 3px 14px !important;
   margin: 0 !important;
   line-height: 1.4 !important;
   font-size: 13px !important;
