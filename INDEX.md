@@ -28,6 +28,7 @@
 - [08 · RAG 完整链路：KnowledgeBase + Retriever + Ask](AI/notes/08-rag-pipeline.md)
 - [09 · Router 能力路由：按需启用 Memory/RAG/Tools](AI/notes/09-router-capability-routing.md)
 - [10 · MCP 详解：协议 + Server + Client + Tool Schema 转换](AI/notes/10-mcp-model-context-protocol.md)
+- [11 · LangChain + LangGraph 学习笔记：15 个 Demo 完整覆盖](AI/notes/11-langchain-langgraph.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -174,6 +175,13 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-17** · 新增 AI 笔记：LangChain + LangGraph 学习笔记（15 个 demo 完整覆盖）
+  - 笔记：`AI/notes/11-langchain-langgraph.md`（730 行）
+  - 关键价值：完整覆盖 LangChain 高层 API（`create_agent` / `@tool` / Checkpointer）+ LangGraph 底层（StateGraph / Node / Edge / Conditional）+ 5 种核心模式（ReAct / Plan-and-Execute / Conditional Routing / Multi-Intent Router / Loop）+ 2 个高级特性（Checkpoint / Human-in-the-Loop）
+  - 包含 Go Agent vs LangGraph 完整对照表（10 个概念映射 + 9 个功能代码量对比）
+  - 来源：`go-interview-guide/code/06-agent/langchain-agent-demo/`（15 个 demo · 1889 行 Python）
+  - 学习状态：路线 10/12 步完成（75%），LangChain/LangGraph 已系统学过
 
 - **2026-09-15** · 批量新增 AI 笔记 9 篇：Agent 完整体系（Context / Orchestration / Memory / Query Rewrite / Embedding / RAG / Router / MCP / Architecture）
   - 笔记：`AI/notes/02-agent-architecture-overview.md` ~ `10-mcp-model-context-protocol.md`（共 3477 行 / 106KB）
