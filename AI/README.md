@@ -22,6 +22,7 @@ AI 相关笔记收录地（提示词、工具用法、模型原理、Agent 实�
 - [09 · Router 能力路由：按需启用 Memory/RAG/Tools](notes/09-router-capability-routing.md)
 - [10 · MCP 详解：协议 + Server + Client + Tool Schema 转换](notes/10-mcp-model-context-protocol.md)
 - [11 · LangChain + LangGraph 学习笔记：15 个 Demo 完整覆盖](notes/11-langchain-langgraph.md)
+- [12 · LangGraph 生产扩展：HITL / Checkpointer / FastAPI 落地](notes/12-langgraph-production-extensions.md)
 
 ## 写作约定
 

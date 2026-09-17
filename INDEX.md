@@ -29,6 +29,7 @@
 - [09 · Router 能力路由：按需启用 Memory/RAG/Tools](AI/notes/09-router-capability-routing.md)
 - [10 · MCP 详解：协议 + Server + Client + Tool Schema 转换](AI/notes/10-mcp-model-context-protocol.md)
 - [11 · LangChain + LangGraph 学习笔记：15 个 Demo 完整覆盖](AI/notes/11-langchain-langgraph.md)
+- [12 · LangGraph 生产扩展：HITL / Checkpointer / FastAPI 落地](AI/notes/12-langgraph-production-extensions.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -175,6 +176,12 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-17** · 新增 AI 笔记：LangGraph 生产扩展（HITL / Checkpointer / Memory vs Checkpoint / FastAPI）
+  - 笔记：`AI/notes/12-langgraph-production-extensions.md`（476 行）
+  - 关键价值：补齐 LangChain/LangGraph 从 Demo 到生产的关键 4 块：① HITL 真实 API 形态（interrupt + resume API + waiting_for_approval 状态）② PostgreSQL/Redis Checkpointer 生产持久化 ③ Memory vs Checkpoint 本质区别（面试高频）④ FastAPI 定位（HTTP 包装层而非 Agent 框架）
+  - 来源：ChatGPT 分享 [6aab992e](https://chatgpt.com/share/6aab992e-ce3c-83e8-ad68-51d82403781f) / [6aab99e2](https://chatgpt.com/share/6aab99e2-aa34-83e8-97dc-ee1a2149d3b5) 的补充内容
+  - 与笔记 11 关系：11 是基础（15 个 demo），12 是生产落地补充；建议两篇配合阅读
 
 - **2026-09-17** · 新增 AI 笔记：LangChain + LangGraph 学习笔记（15 个 demo 完整覆盖）
   - 笔记：`AI/notes/11-langchain-langgraph.md`（730 行）
