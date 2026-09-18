@@ -30,6 +30,7 @@
 - [10 · MCP 详解：协议 + Server + Client + Tool Schema 转换](AI/notes/10-mcp-model-context-protocol.md)
 - [11 · LangChain + LangGraph 学习笔记：15 个 Demo 完整覆盖](AI/notes/11-langchain-langgraph.md)
 - [12 · LangGraph 生产扩展：HITL / Checkpointer / FastAPI 落地](AI/notes/12-langgraph-production-extensions.md)
+- [13 · Agentic RAG 完整链路：真实 Embedding + Metadata Filter + Reranker + 持久化](AI/notes/13-agentic-rag-full-pipeline.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -176,6 +177,12 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-18** · 新增 AI 笔记：Agentic RAG 完整链路 + 求职定位（13 篇 AI 笔记 / 5673 行）
+  - 笔记：`AI/notes/13-agentic-rag-full-pipeline.md`（530 行）
+  - 关键价值：补齐 RAG 从 Demo 到生产的 4 个关键模块：① 真实 Embedding（BGE `bge-small-zh-v1.5` vs FakeEmbedder）② Metadata Filter（结构化过滤，RAG Demo→产品的分水岭）③ Reranker（Bi-Encoder 粗召回 → Cross-Encoder 精排）④ VectorStore 持久化（offline indexing / online retrieval 分离）
+  - 来源：`langchain-agent-demo/17_agentic_rag` 到 `30_agentic_rag_reranker`（14 个 demo · ~2500 行 Python）+ ChatGPT 分享 [6aacda0a](https://chatgpt.com/share/6aacda0a-7680-83e8-9f76-32e96c598d13)
+  - 附加价值：求职定位建议 —— 不必成为 RAG 算法专家，「Go 后端 + Agent 能力」是差异化竞争力；下一步优先级：Multi-Agent / 可观测性 / Evaluation
 
 - **2026-09-17** · 新增 AI 笔记：LangGraph 生产扩展（HITL / Checkpointer / Memory vs Checkpoint / FastAPI）
   - 笔记：`AI/notes/12-langgraph-production-extensions.md`（476 行）
