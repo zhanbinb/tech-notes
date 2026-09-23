@@ -31,6 +31,7 @@
 - [11 · LangChain + LangGraph 学习笔记：15 个 Demo 完整覆盖](AI/notes/11-langchain-langgraph.md)
 - [12 · LangGraph 生产扩展：HITL / Checkpointer / FastAPI 落地](AI/notes/12-langgraph-production-extensions.md)
 - [13 · Agentic RAG 完整链路：真实 Embedding + Metadata Filter + Reranker + 持久化](AI/notes/13-agentic-rag-full-pipeline.md)
+- [14 · Agent 工具安全 + 可靠性：Permission / HITL / Idempotency / Multi-Agent](AI/notes/14-agent-tool-security-and-reliability.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -177,6 +178,13 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-23** · 新增 AI 笔记：Agent 工具安全 + 可靠性（14 篇 AI 笔记 / 6230 行）
+  - 笔记：`AI/notes/14-agent-tool-security-and-reliability.md`（557 行）
+  - 关键价值：补齐企业 Agent 安全 + 可靠性 4 个核心模块：① Tool Permission（用户级权限控制，由程序控制而非 LLM）② Tool Security（普通 vs 高风险操作分层 + HITL 集成）③ Retry + Idempotency（Redis SETNX 经典实现）④ Multi-Agent 思路（Subgraph + Supervisor vs Swarm）
+  - 来源：`langchain-agent-demo/31_rag_hybrid_search` 到 `38_agent_workflow`（8 个 demo · ~3000 行 Python）+ ChatGPT 分享 [6ab340ea](https://chatgpt.com/share/6ab340ea-f644-83e8-aa26-add0f336b6a9)
+  - 关键洞察：企业 Agent 核心 = **传统后端能力 + Agent 思维**（Session/Permission/Audit/Retry 都是后端老本行）；LLM 不管权限、不管高风险审批
+  - 路线里程碑：12 步全部完成 ✅（基础 → Context → 编排 → Memory/RAG → MCP → LangChain → Agentic RAG → Tool 安全）
 
 - **2026-09-18** · 新增 AI 笔记：Agentic RAG 完整链路 + 求职定位（13 篇 AI 笔记 / 5673 行）
   - 笔记：`AI/notes/13-agentic-rag-full-pipeline.md`（530 行）

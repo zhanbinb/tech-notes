@@ -24,6 +24,7 @@ AI 相关笔记收录地（提示词、工具用法、模型原理、Agent 实�
 - [11 · LangChain + LangGraph 学习笔记：15 个 Demo 完整覆盖](notes/11-langchain-langgraph.md)
 - [12 · LangGraph 生产扩展：HITL / Checkpointer / FastAPI 落地](notes/12-langgraph-production-extensions.md)
 - [13 · Agentic RAG 完整链路：真实 Embedding + Metadata Filter + Reranker + 持久化](notes/13-agentic-rag-full-pipeline.md)
+- [14 · Agent 工具安全 + 可靠性：Permission / HITL / Idempotency / Multi-Agent](notes/14-agent-tool-security-and-reliability.md)
 
 ## 写作约定
 
