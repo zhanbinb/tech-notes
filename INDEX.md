@@ -32,6 +32,7 @@
 - [12 · LangGraph 生产扩展：HITL / Checkpointer / FastAPI 落地](AI/notes/12-langgraph-production-extensions.md)
 - [13 · Agentic RAG 完整链路：真实 Embedding + Metadata Filter + Reranker + 持久化](AI/notes/13-agentic-rag-full-pipeline.md)
 - [14 · Agent 工具安全 + 可靠性：Permission / HITL / Idempotency / Multi-Agent](AI/notes/14-agent-tool-security-and-reliability.md)
+- [15 · Multi-Agent 架构实战：Sub-Agent as Tool / 分布式 HTTP / Trace ID](AI/notes/15-multi-agent-architecture.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -178,6 +179,13 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-09-24** · 新增 AI 笔记：Multi-Agent 架构实战（15 篇 AI 笔记 / 6738 行）
+  - 笔记：`AI/notes/15-multi-agent-architecture.md`（508 行）
+  - 关键价值：完整覆盖企业 Multi-Agent 架构 7 大模块：① Multi-Agent vs Multi-Tool 本质区别 ② Sub-Agent as Tool 模式（LangChain 官方推荐）③ 分布式 FastAPI 部署（3 个独立服务）④ Trace ID 透传（分布式可观测性）⑥ 4 种通信模式（同 Workflow State / 跨服务 HTTP / 异步 MQ / 共享 DB）⑦ Multi-Agent vs DDD/Microservices 架构对比 ⑧ 面试完整回答模板
+  - 来源：`langchain-agent-demo/39_multi_agent/`（4 个子 demo：01_basic / 02_agent_as_tool / 03_distributed_http / 04_trace_id）+ ChatGPT 分享 [6ab48013](https://chatgpt.com/share/6ab48013-59ec-83ee-9ca7-742295ca6b53)
+  - 关键洞察：Multi-Agent 在架构思想上类似 DDD/微服务的领域拆分，但每个 Agent 还具备 LLM 动态决策能力；后端经验（分布式系统 / Trace ID / Retry）直接复用
+  - 路线进展：12 步主线 + Multi-Agent 实战已完成；下一步按 ChatGPT 路线：Long-term Memory → 可观测性 → Evaluation
 
 - **2026-09-23** · 新增 AI 笔记：Agent 工具安全 + 可靠性（14 篇 AI 笔记 / 6230 行）
   - 笔记：`AI/notes/14-agent-tool-security-and-reliability.md`（557 行）
