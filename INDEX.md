@@ -33,6 +33,10 @@
 - [13 · Agentic RAG 完整链路：真实 Embedding + Metadata Filter + Reranker + 持久化](AI/notes/13-agentic-rag-full-pipeline.md)
 - [14 · Agent 工具安全 + 可靠性：Permission / HITL / Idempotency / Multi-Agent](AI/notes/14-agent-tool-security-and-reliability.md)
 - [15 · Multi-Agent 架构实战：Sub-Agent as Tool / 分布式 HTTP / Trace ID](AI/notes/15-multi-agent-architecture.md)
+- [16 · Long-term Memory 实战：跨 Session 用户记忆](AI/notes/16-long-term-memory.md)
+- [17 · Agent 评估实战：LLM-as-Judge / LangSmith / Regression](AI/notes/17-agent-evaluation.md)
+- [18 · Agent 可观测性实战：LangSmith Tracing](AI/notes/18-agent-observability.md)
+- [19 · Agent Guardrails 实战：Prompt Injection / 输入输出防护 / Red Team](AI/notes/19-agent-guardrails.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -179,6 +183,12 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-10-10** · 批量新增 AI 笔记 4 篇：Long-term Memory / Evaluation / Observability / Guardrails（生产质量完整覆盖）
+  - 笔记：`AI/notes/16-long-term-memory.md`（298 行）/ `17-agent-evaluation.md`（373 行）/ `18-agent-observability.md`（316 行）/ `19-agent-guardrails.md`（401 行）（合计 1388 行）
+  - 关键价值：补齐企业 Agent 生产质量 4 大模块：① Long-term Memory（Pydantic Schema + LLM 抽取 + 三层数据区分）② Agent 评估（Trajectory/Outcome/Safety + LLM-as-Judge + LangSmith + Regression）③ 可观测性（Logs/Metrics/Traces + LangSmith Tracing）④ Guardrails（Prompt Injection + 输入输出防护 + Red Team）
+  - 来源：`langchain-agent-demo/40-44`（21 个 demo · 6478 行 Python）
+  - 里程碑：12 步主线 + Multi-Agent + 生产质量 4 大模块全部完成 ✅
 
 - **2026-09-24** · 新增 AI 笔记：Multi-Agent 架构实战（15 篇 AI 笔记 / 6738 行）
   - 笔记：`AI/notes/15-multi-agent-architecture.md`（508 行）

@@ -26,6 +26,10 @@ AI 相关笔记收录地（提示词、工具用法、模型原理、Agent 实�
 - [13 · Agentic RAG 完整链路：真实 Embedding + Metadata Filter + Reranker + 持久化](notes/13-agentic-rag-full-pipeline.md)
 - [14 · Agent 工具安全 + 可靠性：Permission / HITL / Idempotency / Multi-Agent](notes/14-agent-tool-security-and-reliability.md)
 - [15 · Multi-Agent 架构实战：Sub-Agent as Tool / 分布式 HTTP / Trace ID](notes/15-multi-agent-architecture.md)
+- [16 · Long-term Memory 实战：跨 Session 用户记忆](notes/16-long-term-memory.md)
+- [17 · Agent 评估实战：LLM-as-Judge / LangSmith / Regression](notes/17-agent-evaluation.md)
+- [18 · Agent 可观测性实战：LangSmith Tracing](notes/18-agent-observability.md)
+- [19 · Agent Guardrails 实战：Prompt Injection / 输入输出防护 / Red Team](notes/19-agent-guardrails.md)
 
 ## 写作约定
 
