@@ -1,6 +1,6 @@
 # Agent 可观测性实战：LangSmith Tracing
 
-> 📚 配套笔记：[agent-evaluation.md](./agent-evaluation.md)（评估）/ [multi-agent-architecture.md](./multi-agent-architecture.md)（Trace ID）
+> 📚 配套笔记：[agent-evaluation.md](./17-agent-evaluation.md)（评估）/ [multi-agent-architecture.md](./15-multi-agent-architecture.md)（Trace ID）
 > 🗓️ 时间：今天（基于 `langchain-agent-demo/42_agent_observability`）
 > 🎯 主题：让 Agent 看得见、调得动、监控得住
 
@@ -122,7 +122,7 @@ Root Run: "帮我查询订单10001"
 - **Trace ID** = 用什么 ID 串联日志
 - **可观测性** = 用什么工具看这些日志
 
-> 之前 [multi-agent-architecture.md](./multi-agent-architecture.md) 讲了 Trace ID 透传（HTTP Header）。
+> 之前 [multi-agent-architecture.md](./15-multi-agent-architecture.md) 讲了 Trace ID 透传（HTTP Header）。
 > 这一章讲**怎么把这些 Trace 数据可视化、分析**。
 
 ---
@@ -155,7 +155,39 @@ Root Run: "帮我查询订单10001"
 
 ---
 
-## 6️⃣ 三种实现路径
+## 6️⃣ 生产级 OpenTelemetry + Jaeger（阶段 46 已落地）⭐ 补充
+
+本节是 Demo 之外的**生产落地**，已在 `46_enterprise_agent` 项目实现：
+
+```python
+# app/core/otel.py
+provider = TracerProvider(resource=Resource.create({"service.name": "enterprise-agent"}))
+exporter = OTLPSpanExporter(endpoint="http://localhost:4318/v1/traces", timeout=3)
+provider.add_span_processor(BatchSpanProcessor(exporter))        # 批量导出，不阻塞业务
+trace.set_tracer_provider(provider)
+FastAPIInstrumentor.instrument_app(app, tracer_provider=provider)  # HTTP Span 自动
+```
+
+### Span 层次（在 Jaeger 中查看）
+
+```
+HTTP POST /chat                       ← FastAPI 自动
+└── agent.execute                     ← 手动 start_as_current_span
+    ├── (LLM call)                    ← LangChain 自动
+    ├── tool.query_order
+    └── rag.retriever / rag.reranker   ← 为 RAG 内部阶段加子 Span
+```
+
+### 落地要点
+
+- 本阶段**先不引入 OpenTelemetry Collector**，应用直接 OTLP → Jaeger（减少本地配置）
+- 用途：拿到每个 Span 的真实耗时 → **分清"模型慢"还是"检索慢"**，再决定优化哪里
+- 已知坑：**避免工具 Span 重复生成**（重复包一层会得到两条相同记录）
+- 完整落地 + 性能排查顺序见 [企业知识库 Agent 综合项目](./21-enterprise-agent-project.md)
+
+> 📖 同一项目的完整可观测链路（回调日志 + OTel + 错误分类）见 [enterprise-agent-project.md](./21-enterprise-agent-project.md)。
+
+## 7️⃣ 三种实现路径
 
 ### 路径 1：LangSmith（最简单）
 
@@ -214,7 +246,7 @@ def log_event(event_type, data):
 
 ---
 
-## 7️⃣ 关键洞察
+## 8️⃣ 关键洞察
 
 ### 1. 可观测性是事后视角，不是开发时工具
 
@@ -259,7 +291,7 @@ Agent 的成本主要在 LLM Token。
 
 ---
 
-## 8️⃣ 面试回答模板
+## 9️⃣ 面试回答模板
 
 ### 30 秒版
 
@@ -296,9 +328,9 @@ Agent 的成本主要在 LLM Token。
 
 ## 🔗 相关笔记
 
-- [Agent 评估](./agent-evaluation.md) - 离线评估（Dataset + Regression）
-- [Multi-Agent 架构实战](./multi-agent-architecture.md) - Trace ID 透传
-- [Agent Guardrails](./agent-guardrails.md) - 安全监控
+- [Agent 评估](./17-agent-evaluation.md) - 离线评估（Dataset + Regression）
+- [Multi-Agent 架构实战](./15-multi-agent-architecture.md) - Trace ID 透传
+- [Agent Guardrails](./19-agent-guardrails.md) - 安全监控
 
 ---
 

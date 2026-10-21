@@ -30,6 +30,8 @@ AI 相关笔记收录地（提示词、工具用法、模型原理、Agent 实�
 - [17 · Agent 评估实战：LLM-as-Judge / LangSmith / Regression](notes/17-agent-evaluation.md)
 - [18 · Agent 可观测性实战：LangSmith Tracing](notes/18-agent-observability.md)
 - [19 · Agent Guardrails 实战：Prompt Injection / 输入输出防护 / Red Team](notes/19-agent-guardrails.md)
+- [20 · 生产架构：FastAPI 服务化 / 流式 / 异步 / 超时重试 / 配置](notes/20-production-architecture.md)
+- [21 · 企业知识库 Agent 综合项目：混合检索 / OTel / 性能取舍](notes/21-enterprise-agent-project.md)
 
 ## 写作约定
 

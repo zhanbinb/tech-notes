@@ -37,6 +37,8 @@
 - [17 · Agent 评估实战：LLM-as-Judge / LangSmith / Regression](AI/notes/17-agent-evaluation.md)
 - [18 · Agent 可观测性实战：LangSmith Tracing](AI/notes/18-agent-observability.md)
 - [19 · Agent Guardrails 实战：Prompt Injection / 输入输出防护 / Red Team](AI/notes/19-agent-guardrails.md)
+- [20 · 生产架构：FastAPI 服务化 / 流式 / 异步 / 超时重试 / 配置](AI/notes/20-production-architecture.md)
+- [21 · 企业知识库 Agent 综合项目：混合检索 / OTel / 性能取舍](AI/notes/21-enterprise-agent-project.md)
 
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
@@ -183,6 +185,14 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-10-21** · 批量新增 AI 笔记 2 篇：生产架构 + 企业综合项目（21 篇 AI 笔记 / 约 8700 行）
+  - 笔记：`AI/notes/20-production-architecture.md`（326 行）+ `21-enterprise-agent-project.md`（375 行）
+  - 关键价值：**从"孤立 Demo"走向"完整可运行项目"**。① 生产架构：FastAPI 服务化 / SSE 流式（TTFT vs 总耗时）/ 202 异步任务 / 超时+可重试错误分类 / 配置启动即校验 ② 企业综合项目：分层 app 架构 / **BM25+FAISS+RRF 融合+BGE Reranker** 混合检索 / Reranker 阈值"宁可不答不编" / OTel→Jaeger 全链路 Span / 异常链遍历错误分类→HTTP 状态码 / pytest 假检索器 / **快速路径 vs 完整 Agent 的性能取舍**
+  - 同时更新：`18-agent-observability.md` 新增"生产级 OpenTelemetry + Jaeger"章节
+  - 来源：`langchain-agent-demo/45_production_architecture`（4 个子 demo · 1161 行）+ `46_enterprise_agent`（综合项目 · 1559 行）+ ChatGPT 分享 [6ad806d9](https://chatgpt.com/share/6ad806d9-b2d4-83ec-9e7b-808276d282d8)
+  - 核心原则（面试可用）："能用确定性代码解决的问题，不必全部交给 LLM；只有需要模型理解、判断或生成的环节，才使用模型。"
+  - 里程碑：19 步技术路线完成（85%+），最后一步是阶段 47「面试表达 + 项目讲解」
 
 - **2026-10-10** · 批量新增 AI 笔记 4 篇：Long-term Memory / Evaluation / Observability / Guardrails（生产质量完整覆盖）
   - 笔记：`AI/notes/16-long-term-memory.md`（298 行）/ `17-agent-evaluation.md`（373 行）/ `18-agent-observability.md`（316 行）/ `19-agent-guardrails.md`（401 行）（合计 1388 行）
