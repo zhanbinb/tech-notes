@@ -6,6 +6,7 @@
 
 - [AI](AI/README.md)
 - [Codex](codex/README.md)
+- [DSH](dsh/README.md)
 - [GitHub](github/README.md)
 - [Go (golang)](golang/README.md)
 - [Docker](docker/README.md)
@@ -43,6 +44,9 @@
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
 - [02 · Codex 个人插件：完整开发与安装流程](codex/notes/02-codex-personal-plugin-install-flow.md)
+
+### DSH · 当前笔记
+- [01 · DSH 原生插件开发：Save to Tech Notes 从 Codex 迁移实战](dsh/notes/01-save-to-tech-notes-dsh-plugin-migration.md)
 
 ### GitHub · 当前笔记
 - [01 · Tech Notes 博客自动部署工作流](github/notes/01-tech-notes-blog-auto-deploy.md)
@@ -185,6 +189,10 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-11-05** · 新增 DSH 笔记：Save to Tech Notes 从 Codex 插件迁移到 DSH 原生 bundle
+  - 笔记：`dsh/notes/01-save-to-tech-notes-dsh-plugin-migration.md`
+  - 关键价值：沉淀当前版本 DSH 插件开发官方规范——configuration-only bundle、隔离 skill provider 与 rank 优先级、两条安装通道（`plugin_manager` vs Web Plugins 页）、注册表缓存与重启语义；同时完成 save-to-tech-notes 的 DSH 化并端到端验证保存流程。
 
 - **2026-10-21** · 批量新增 AI 笔记 2 篇：生产架构 + 企业综合项目（21 篇 AI 笔记 / 约 8700 行）
   - 笔记：`AI/notes/20-production-architecture.md`（326 行）+ `21-enterprise-agent-project.md`（375 行）
