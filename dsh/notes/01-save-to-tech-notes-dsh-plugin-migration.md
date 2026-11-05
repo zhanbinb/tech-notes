@@ -8,7 +8,7 @@
 - **DSH 插件 = bundle**：一个 `package.json` 带 `dsh.bundle.patch` 的包就是插件；纯配置型 bundle（configuration-only bundle）**不需要** `index.js`、构建工具和依赖——manifest 只要 `name`、`version`、`dsh.bundle.patch` 三项。
 - **技能三件套**：`@deepseek-ai/dsh-skill`（注册表 `ctx.skills`）+ `@deepseek-ai/dsh-skill-filesystem`（本地目录 provider）+ `@deepseek-ai/dsh-tool-skill`（模型侧 `skill` 工具与用户 `/name` 调用）。三者由 base/ preset 行挂载，插件只需**追加自己的 provider 行**复用它们。
 - **隔离 provider 写法**：`customSkillDirs: [<插件内 skills 绝对路径>]` + `includeDefaultRoots: false` + 独一无二的 `providerName`，即可"只扫插件自带技能"，不碰项目根与 `~/.dsh` 默认目录。
-- **同名技能取胜规则**（源码 `compareIndexedCandidates`）：同 layer 内按 rank **升序优先、先见者胜**，落败者记 warn。rank：project 100 < project-agents 200 < runtime 250 < custom 300 < user-dsh 400 < user-agents 500 < bundled 600。→ 插件内技能（custom 300）天然盖过 `~/.dsh/skills` 散装副本（user-dsh 400）。
+- **同名技能取胜规则**（源码 `compareIndexedCandidates`）：先按 **layer 近远**决胜——近层对同名技能直接胜出，rank 不参与跨层比较；**同 layer 内**才按 rank 升序优先、先见者胜，落败者记 warn。rank：project 100 < project-agents 200 < runtime 250 < custom 300 < user-dsh 400 < user-agents 500 < bundled 600。→ 插件 provider（全局层）与 preset 层里的散装副本相遇时，**preset 层无条件赢**，与 rank 无关（本次实测踩中，见常见坑）。
 - **两条安装通道**：代理侧 `plugin_manager` 的 `install_bundle`（只有 Creator preset 启用）；用户侧 **Web 侧边栏 Plugins → Add plugin → 本地绝对路径 → Install → Enable now**。`standard` preset 中 `tool-plugin-manager` 被硬编码 `disabled: true`，不要假设会话里代理能装插件。
 - **安装即持久化**：装完写入 profile 的 `package.json`（`dependencies` 用 `link:` + `dsh.profile.bundles` 追加）与 `pnpm-lock.yaml`，重启后继续生效；链接安装意味着**插件目录不能移动/删除**。
 
@@ -55,6 +55,7 @@ Plugins → Add plugin → 粘贴 bundle 绝对路径 → Install → **Enable n
 ## 常见坑
 
 - **preset 行是嵌套的**：preset 定义（如 `standard`）把工具行放在 `preset-standard` 的 `config.plugins` 里；`standard` 既无 `tool-plugin-manager` 也无 `tool-cordis`（`cordis` preset 才有）。会话工具集由 preset 决定，profile patch 不一定会覆盖到嵌套行。
+- **preset 层遮蔽全局层（本次实测的最大坑）**：`standard` preset 内嵌的 `skill-filesystem` 行把 `~/.dsh/skills` 扫进 **preset 层**，而 bundle 是 host 行落在**全局层**；registry 合并时近层（preset）直接胜出——即使插件 provider 已正常挂载、rank 更优，技能仍由散装副本提供。**解法**：把散装副本移出扫描根（本次归档到 `~/.dsh/skills/.system/`，官方文档明确 user-dsh 根跳过 `.system` 子目录），文件系统 watcher 即时 invalidate 注册表缓存，无需重启。
 - **`registerProvider` 不刷新注册表缓存**：目录缓存只在 provider 自身 `invalidate()`、运行时注册/销毁时失效（`invalidateCache` → revision+1）。HMR 新挂载的 provider 不会自动让已缓存的会话目录换源——看到旧 Base directory 先怀疑缓存陈旧，重启（或改一次技能文件触发 watcher）再验。
 - **`next-number.sh` 原版固有 bug**：`set -o pipefail` 下目录为空或只有子目录时 `grep` 无匹配 exit 1，脚本提前退出（Codex 原版同样如此）。实际 SKILL.md 流程由模型手工数最大 `NN`，不调用该脚本，故无用户可见影响。
 - **路径硬编码三处**：两个脚本的 `REPO=`、SKILL.md 第 6 行仓库路径、第 141 行 `publish.sh` 绝对路径；分支 `origin main` 也硬编码。迁移时保持原样即可，改位置需三处同步。
