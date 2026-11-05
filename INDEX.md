@@ -9,6 +9,7 @@
 - [DSH](dsh/README.md)
 - [GitHub](github/README.md)
 - [Go (golang)](golang/README.md)
+- [.NET (dotnet)](dotnet/README.md)
 - [Docker](docker/README.md)
 - [Etcd](etcd/README.md)
 - [Kubernetes](kubernetes/README.md)
@@ -50,6 +51,9 @@
 
 ### GitHub · 当前笔记
 - [01 · Tech Notes 博客自动部署工作流](github/notes/01-tech-notes-blog-auto-deploy.md)
+
+### .NET · 当前笔记
+- [01 · ASP.NET Core 订单管理项目：学习笔记与四阶段路线图](dotnet/notes/01-aspnet-core-order-management-study-notes-roadmap.md) — 八件套全通 + Step 17.9 进度 + 9 个常见坑
 
 ### Go · 当前笔记
 - [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -189,6 +193,12 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-11-05** · 新增 .NET 分类首篇笔记：ASP.NET Core 订单管理项目学习笔记与四阶段路线图
+  - 笔记：`dotnet/notes/01-aspnet-core-order-management-study-notes-roadmap.md`
+  - 关键价值：沉淀 OrderManagement 实战（.NET 10 + EF Core 10 + PostgreSQL）的完整知识图谱——八件套（分层/DI/Options/Serilog/全局异常/JWT 授权/OpenAPI）+ 四阶段学习路线（当前 Step 17.9，下一步 Step 18 Redis 缓存）+ 9 个真实踩坑（`Add()` 不落库、migration 比较模型 vs Snapshot、Npgsql `-infinity` 等）
+  - 来源：`OrderManagement` 项目源码 + 9 个 EF 迁移历史 + 5 个 ChatGPT 学习对话（Step 01→18 主线，205 条消息）
+  - 完整版：`OrderManagement/docs/学习笔记与路线图.md`（含 Mermaid 路线图与速查表）
 
 - **2026-11-05** · 新增 DSH 笔记：Save to Tech Notes 从 Codex 插件迁移到 DSH 原生 bundle
   - 笔记：`dsh/notes/01-save-to-tech-notes-dsh-plugin-migration.md`
