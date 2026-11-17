@@ -12,6 +12,11 @@
   - 八件套全通：分层 / EF Core / DI 生命周期 / Options / Serilog / 全局异常 / JWT 认证授权 / OpenAPI
   - 四阶段路线图 + 9 个常见坑（SaveChanges 缺失、migration 比较模型 vs Snapshot、-infinity 等）
   - ChatGPT 学习主线索引：Step 01 → 18（当前进度 Step 17.9，下一步 Redis 缓存）
+- [02 · 工程化进阶：Redis 缓存 · 测试 · Docker CI · 乐观并发（Step 18~24）](notes/02-aspnet-core-engineering-redis-testing-docker-ci.md)
+  - Cache-Aside + 空值缓存防穿透 + 一致性三档（TTL → 重试 → Outbox）；Repository 重构修复落库 Bug
+  - xUnit + Moq + WebApplicationFactory 集成测试三坑（Testing 无 User Secrets / EF 双 Provider / 限流 429）
+  - Docker 多阶段 + Compose 健康检查启动顺序 + GitHub Actions CI；xmin 乐观并发 → 409
+  - 附：高级 .NET 岗位 8 大领域技术地图 + 2026 面试准备策略（项目内 `docs/06-高级岗位与面试准备.md`）
 
 ## 写作约定
 

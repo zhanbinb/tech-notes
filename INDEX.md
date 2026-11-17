@@ -54,6 +54,7 @@
 
 ### .NET · 当前笔记
 - [01 · ASP.NET Core 订单管理项目：学习笔记与四阶段路线图](dotnet/notes/01-aspnet-core-order-management-study-notes-roadmap.md) — 八件套全通 + Step 17.9 进度 + 9 个常见坑
+- [02 · 工程化进阶：Redis 缓存 · 测试 · Docker CI · 乐观并发（Step 18~24）](dotnet/notes/02-aspnet-core-engineering-redis-testing-docker-ci.md) — 一致性三档 + 测试排障三坑 + xmin 409 + 面试技术地图
 
 ### Go · 当前笔记
 - [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -193,6 +194,12 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-11-17** · 新增 .NET 笔记：工程化进阶 Step 18~24（Redis 缓存 · 测试 · Docker CI · 乐观并发）
+  - 笔记：`dotnet/notes/02-aspnet-core-engineering-redis-testing-docker-ci.md`
+  - 关键价值：OrderManagement 第二阶段实战——Cache-Aside + 空值缓存防穿透与一致性三档（TTL→重试→Outbox）、Repository 修复落库 Bug、集成测试三坑排障（Testing 无 User Secrets / EF 双 Provider / 限流 429）、Docker 多阶段 + Compose 健康检查、xmin 乐观并发 → 409；附高级 .NET 岗位 8 大领域技术地图与 2026 面试准备策略
+  - 来源：`OrderManagement` 源码（15 个主题 / 25 个测试）+ 8 个新 ChatGPT 对话（Step 19~24，271 条消息）
+  - 完整版：`OrderManagement/docs/` 6 个专题页（导航：`docs/学习笔记与路线图.md`）
 
 - **2026-11-05** · 新增 .NET 分类首篇笔记：ASP.NET Core 订单管理项目学习笔记与四阶段路线图
   - 笔记：`dotnet/notes/01-aspnet-core-order-management-study-notes-roadmap.md`
