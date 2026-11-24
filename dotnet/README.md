@@ -17,6 +17,20 @@
   - xUnit + Moq + WebApplicationFactory 集成测试三坑（Testing 无 User Secrets / EF 双 Provider / 限流 429）
   - Docker 多阶段 + Compose 健康检查启动顺序 + GitHub Actions CI；xmin 乐观并发 → 409
   - 附：高级 .NET 岗位 8 大领域技术地图 + 2026 面试准备策略（项目内 `docs/06-高级岗位与面试准备.md`）
+- [03 · C# 异步编程与并发控制：async/await · WhenAll · 线程池 · CTS · 锁](notes/03-csharp-async-and-concurrency.md)
+  - async 非多线程、WhenAll 并发/异常语义、ThreadPool Starvation、协作式取消、竞态/lock/Interlocked/SemaphoreSlim
+- [04 · RabbitMQ 消息队列与消费幂等：ACK · ON CONFLICT · 事务边界](notes/04-rabbitmq-and-idempotency.md)
+  - 连接池与事务边界铁律、四 Exchange、手动 ACK 时机、MessageId + 唯一索引同事务幂等（实测）
+- [05 · DDD 领域驱动设计实战：聚合根 · 值对象 · EF OwnsMany · 领域事件](notes/05-ddd-domain-driven-design.md)
+  - 四层依赖规则、Money record、不变性守卫、查询三原则、领域异常→HTTP 映射、NU1202 版本铁律
+- [06 · 分布式系统与架构设计：分布式事务 · Outbox · 容错 · SOLID · 架构模式](notes/06-distributed-systems-patterns.md)
+  - 2PC/TCC/Saga 增量补偿、Outbox 可靠发布、容错四件套、四模式口诀、三层/Clean/CQRS
+- [07 · .NET 可观测性与生产诊断：三支柱 · dotnet-counters/trace · 发布策略](notes/07-dotnet-observability-diagnostics.md)
+  - 四类故障特征（队列涨+CPU低=饥饿）、counters/trace 实操、蓝绿/金丝雀、Expand-Contract
+- [08 · ASP.NET Core 请求管线：Middleware 洋葱模型 · 五种 Filter](notes/08-aspnet-core-pipeline-filters.md)
+  - 洋葱模型与短路、Use/Run/Map、五种 Filter 顺序、中间件 vs 过滤器选型口诀
+- [09 · PostgreSQL 数据库进阶：事务隔离级别 · 锁与防超卖 · 索引与 EXPLAIN](notes/09-postgresql-transactions-indexes.md)
+  - 隔离级别实测、条件原子 UPDATE 防超卖、死锁 40P01、Keyset 深分页、B+Tree 聚簇对比
 
 ## 写作约定
 

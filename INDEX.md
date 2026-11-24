@@ -55,6 +55,13 @@
 ### .NET · 当前笔记
 - [01 · ASP.NET Core 订单管理项目：学习笔记与四阶段路线图](dotnet/notes/01-aspnet-core-order-management-study-notes-roadmap.md) — 八件套全通 + Step 17.9 进度 + 9 个常见坑
 - [02 · 工程化进阶：Redis 缓存 · 测试 · Docker CI · 乐观并发（Step 18~24）](dotnet/notes/02-aspnet-core-engineering-redis-testing-docker-ci.md) — 一致性三档 + 测试排障三坑 + xmin 409 + 面试技术地图
+- [03 · C# 异步编程与并发控制](dotnet/notes/03-csharp-async-and-concurrency.md) — async/WhenAll/线程池饥饿/CTS/锁
+- [04 · RabbitMQ 与消费幂等](dotnet/notes/04-rabbitmq-and-idempotency.md) — ACK 时机 + ON CONFLICT 同事务幂等
+- [05 · DDD 领域驱动设计实战](dotnet/notes/05-ddd-domain-driven-design.md) — 聚合根/值对象/OwnsMany/领域事件
+- [06 · 分布式系统与架构设计](dotnet/notes/06-distributed-systems-patterns.md) — Saga 补偿/Outbox/容错/四模式/CQRS
+- [07 · .NET 可观测性与生产诊断](dotnet/notes/07-dotnet-observability-diagnostics.md) — 三支柱/counters/trace/发布策略
+- [08 · ASP.NET Core 请求管线](dotnet/notes/08-aspnet-core-pipeline-filters.md) — 洋葱模型/五种 Filter/选型口诀
+- [09 · PostgreSQL 数据库进阶](dotnet/notes/09-postgresql-transactions-indexes.md) — 隔离级别/防超卖/EXPLAIN/Keyset
 
 ### Go · 当前笔记
 - [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -194,6 +201,13 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-11-24** · 批量新增 .NET 笔记 7 篇：阶段 25~31（异步/管线/数据库/MQ/分布式/DDD/诊断）
+  - 笔记：`dotnet/notes/03~09`（03 异步并发 / 04 RabbitMQ 幂等 / 05 DDD / 06 分布式架构 / 07 可观测性诊断 / 08 请求管线 / 09 PostgreSQL 进阶）
+  - 关键价值：OrderManagement 第三阶段（阶段 25~31）完整知识沉淀——**面试第一优先级**的 async/await 与线程池、Middleware 洋葱模型与五种 Filter、PG 隔离级别与防超卖原子 UPDATE、RabbitMQ ACK + ON CONFLICT 幂等（实测）、Saga 增量补偿与 Outbox、DDD 聚合根/值对象实战、dotnet-counters/trace 诊断与发布策略
+  - 来源：`OrderManagement` 源码（DDD 四层 + AsyncDemo + RabbitMQ + 诊断产物）+ 11 个新 ChatGPT 对话（阶段 25~32，344 条消息）
+  - 完整版：`OrderManagement/docs/` 13 个专题页（导航：`docs/学习笔记与路线图.md`）
+  - 面试补充：9 阶段路线完成 8/9，纠错「多实例库存扣减不能用 lock 要用原子 UPDATE」+ 缺口清单（C# 基础/Gateway/服务发现）
 
 - **2026-11-17** · 新增 .NET 笔记：工程化进阶 Step 18~24（Redis 缓存 · 测试 · Docker CI · 乐观并发）
   - 笔记：`dotnet/notes/02-aspnet-core-engineering-redis-testing-docker-ci.md`
