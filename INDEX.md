@@ -42,6 +42,8 @@
 - [20 · 生产架构：FastAPI 服务化 / 流式 / 异步 / 超时重试 / 配置](AI/notes/20-production-architecture.md)
 - [21 · 企业知识库 Agent 综合项目：混合检索 / OTel / 性能取舍](AI/notes/21-enterprise-agent-project.md)
 
+- [22 · .NET AI 实战：Microsoft.Extensions.AI 接入大模型 · SSE 流式 · 多轮对话 · ChatOptions](AI/notes/22-dotnet-ai-chat-client-sse.md) — IChatClient 抽象 + SSE 协议 + 会话记忆 + 生成参数
+
 ### Codex · 当前笔记
 - [01 · Codex Skill 创建：通过 Plugin 分发](codex/notes/01-codex-skill-creation-via-plugin.md)
 - [02 · Codex 个人插件：完整开发与安装流程](codex/notes/02-codex-personal-plugin-install-flow.md)
@@ -62,6 +64,10 @@
 - [07 · .NET 可观测性与生产诊断](dotnet/notes/07-dotnet-observability-diagnostics.md) — 三支柱/counters/trace/发布策略
 - [08 · ASP.NET Core 请求管线](dotnet/notes/08-aspnet-core-pipeline-filters.md) — 洋葱模型/五种 Filter/选型口诀
 - [09 · PostgreSQL 数据库进阶](dotnet/notes/09-postgresql-transactions-indexes.md) — 隔离级别/防超卖/EXPLAIN/Keyset
+- [10 · C# 核心基础与 ASP.NET Core 请求机制](dotnet/notes/10-csharp-fundamentals-and-web-pipeline.md) — 装箱/IQueryable/Model Binding/路由约束
+- [11 · Ocelot API Gateway 与 Consul 服务发现](dotnet/notes/11-ocelot-gateway-consul.md) — 路由/JWT/限流 + 502 根因排查
+- [12 · 高并发订单系统设计](dotnet/notes/12-high-concurrency-order-design.md) — 下单幂等/支付 Unknown/秒杀七层防线
+- [13 · ABP Framework 框架核心](dotnet/notes/13-abp-framework-core.md) — Module/UoW/权限/多租户/EventBus Outbox
 
 ### Go · 当前笔记
 - [01 · Go 后端学习路线图（融合版）](golang/notes/01-go-backend-roadmap.md)
@@ -201,6 +207,13 @@
 - `#SQL-Server` — 与 MySQL 隔离级别/类型/函数/字符集/分页等对比与迁移
 
 ## 最近更新
+
+- **2026-11-27** · 批量新增 .NET 笔记 4 篇 + AI 笔记 1 篇：阶段 33~37（C# 基础/网关/高并发/ABP/AI）
+  - 笔记：`dotnet/notes/10~13`（10 C# 基础与 Web 机制 / 11 Ocelot+Consul 网关 / 12 高并发订单设计 / 13 ABP 框架核心）+ `AI/notes/22-dotnet-ai-chat-client-sse.md`
+  - 关键价值：**ABP 归拢一篇**（Module/UoW/权限/多租户/EventBus Outbox，CLI 排错实录）、**AI 归拢一篇**（IChatClient 统一抽象、SSE 流式、多轮记忆滑窗、ChatOptions）；网关篇含真实 **Ocelot+Consul 502 根因排查**（node.Name vs Service.Address）；高并发篇含下单幂等/支付 Unknown/秒杀七层防线与标准面试回答
+  - 来源：`OrderManagement` 源码（Gateway/AI/Consul 三个新模块）+ 11 个新 ChatGPT 对话（22~32，338 条消息）
+  - 完整版：`OrderManagement/docs/` 19 个专题页（导航：`docs/学习笔记与路线图.md`）
+  - 路线更新：AI 后端六阶段 —— ①综合面试 ✅ ②ABP ✅ **③.NET AI 基础 🚧** → ④RAG → ⑤Agent Framework+MCP → ⑥Order AI Assistant
 
 - **2026-11-24** · 批量新增 .NET 笔记 7 篇：阶段 25~31（异步/管线/数据库/MQ/分布式/DDD/诊断）
   - 笔记：`dotnet/notes/03~09`（03 异步并发 / 04 RabbitMQ 幂等 / 05 DDD / 06 分布式架构 / 07 可观测性诊断 / 08 请求管线 / 09 PostgreSQL 进阶）

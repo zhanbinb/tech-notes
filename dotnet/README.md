@@ -32,6 +32,15 @@
 - [09 · PostgreSQL 数据库进阶：事务隔离级别 · 锁与防超卖 · 索引与 EXPLAIN](notes/09-postgresql-transactions-indexes.md)
   - 隔离级别实测、条件原子 UPDATE 防超卖、死锁 40P01、Keyset 深分页、B+Tree 聚簇对比
 
+- [10 · C# 核心基础与 ASP.NET Core 请求机制](notes/10-csharp-fundamentals-and-web-pipeline.md)
+  - 值/引用与装箱、override vs new、IEnumerable vs IQueryable、Model Binding 推断、路由约束 404、API Versioning
+- [11 · Ocelot API Gateway 与 Consul 服务发现](notes/11-ocelot-gateway-consul.md)
+  - 路由/JWT/限流/RoundRobin + Consul 注册发现 + **502 根因排查**（node.Name vs Service.Address）
+- [12 · 高并发订单系统设计](notes/12-high-concurrency-order-design.md)
+  - 下单幂等（UNIQUE 约束）、支付 Unknown 状态机、秒杀七层防线、Keyset、架构选型与标准面试回答
+- [13 · ABP Framework 框架核心](notes/13-abp-framework-core.md)
+  - Module 依赖排序、Auto API、UoW（高于 BeginTransaction 可脱离 ABP）、权限三件套、多租户、EventBus Outbox/Inbox、审计/BackgroundJobs
+
 ## 写作约定
 
 - 笔记命名：`NN-<topic>.md`，`NN` 为两位数序号。

@@ -32,6 +32,10 @@ AI 相关笔记收录地（提示词、工具用法、模型原理、Agent 实�
 - [19 · Agent Guardrails 实战：Prompt Injection / 输入输出防护 / Red Team](notes/19-agent-guardrails.md)
 - [20 · 生产架构：FastAPI 服务化 / 流式 / 异步 / 超时重试 / 配置](notes/20-production-architecture.md)
 - [21 · 企业知识库 Agent 综合项目：混合检索 / OTel / 性能取舍](notes/21-enterprise-agent-project.md)
+- [22 · .NET AI 实战：Microsoft.Extensions.AI 接入大模型 · SSE 流式 · 多轮对话 · ChatOptions](notes/22-dotnet-ai-chat-client-sse.md)
+  - `IChatClient` 统一抽象（换模型只改 DI）、生命周期（Singleton client + SemaphoreSlim 串行会话）
+  - SSE 流式协议细节（`data:` 前缀/Flush/中文乱码根因）、多轮记忆滑窗、Temperature/MaxOutputTokens/TopP 配置化
+  - 来源：OrderManagement 项目 MiMo 接入实战（对话 30~32 归拢）
 
 ## 写作约定
 
